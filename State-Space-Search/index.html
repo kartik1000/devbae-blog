@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Artificial Intelligence - Part 2.1 - DevBae</title>
+<meta name="description" content="This is Part 2.1 in the Introduction to A.I. blog series. Read Part 1 for basic introduction to A.I.">
+
+
+<meta name="author" content="Utkarsh Jain">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Artificial Intelligence - Part 2.1">
+<meta property="og:url" content="https://www.devbae.tech/State-Space-Search/">
+
+
+<meta property="og:description" content="This is Part 2.1 in the Introduction to A.I. blog series. Read Part 1 for basic introduction to A.I.">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-05-17T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/State-Space-Search/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Artificial Intelligence - Part 2.1 - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="This is Part 2.1 in the Introduction to A.I. blog series. Read Part 1 for basic introduction to A.I.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/State-Space-Search/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://blog-c7ff.kxcdn.com/blog/wp-content/uploads/2017/04/AI_blog.jpg')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Artificial Intelligence - Part 2.1</h1>
+            
+              <h2 class="subheading">State-Space Search Methods</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  <a target="_blank" href="https://github.com/the-utkarshjain">Utkarsh Jain</a>
+                
+              
+              on May 17, 2020 &middot; <span class="reading-time" title="Estimated read time">
+  
+   15 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+
+        <!-- For single author -->
+        <div class="sidebar-author-details">
+        
+          
+
+          <!-- Check if the user exists in frequent authors (authors.yml) -->
+          
+
+            
+              <!-- Image URL -->
+              <div class="author__avatar">
+                <img src="https://avatars3.githubusercontent.com/u/45516528?s=460v=4"
+                  alt="Utkarsh Jain" itemprop="image">
+              </div>
+            
+
+            <!-- Devbae Name -->
+            <div class="author__content">
+              <h3 class="author__name" itemprop="name">Utkarsh Jain</h3>
+              
+              
+                <div class="author__bio" itemprop="description">
+                  <p>Core Team Member, DevBae</p>
+                </div>
+              
+            </div>
+
+            <!-- Author Links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse btn-show-urls">Follow</button>
+              <ul class="author__urls social-icons">
+
+                <!-- Loop and add the respective links here -->
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="mailto:utkarsh.j.99@gmail.com" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-envelope-square"></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://github.com/the-utkarshjain" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-fw fa-github"></i>
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/iamutkarshjain/" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-linkedin"></i>
+                      <span class="label">Linkedin</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://facebook.com/utkarsh.jain.376" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-facebook"></i>
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://instagram.com/the_utkarshjain" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-instagram"></i>
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div> <!-- End of author links-->
+                
+          
+        </div> <!-- End of sidebar-author-details for multiple authors -->
+
+        <!-- End of if which checks if the site authors are present or not -->
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li><a href="#state-space-search-methods">State-Space Search Methods</a></li>
+  <li><a href="#decision-search"> 1. Decision-Making as Search </a>
+    <ul>
+      <li><a href="#exploring-search-state">Exploring Search State</a></li>
+    </ul>
+  </li>
+  <li><a href="#uninformed-search"> 2. Uninformed Search Algorithms </a>
+    <ul>
+      <li><a href="#dfs"> 2.1 Depth-First Search (DFS) </a></li>
+      <li><a href="#bfs"> 2.2 Breadth-First Search (BFS) </a></li>
+      <li><a href="#summing-up">Summing Up:</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>This is Part 2.1 in the <strong>Introduction to A.I.</strong> blog series. Read <a href="/Introduction-to-AI/">Part 1</a> for basic introduction to A.I.</p>
+
+<h2 id="state-space-search-methods">State-Space Search Methods</h2>
+
+<p>In the previous blog, I tried to introduce the concept of artificial intelligence, why it is needed and the different ways to achieve it. The main topics for this blog are:</p>
+
+<ol>
+  <li><a href="#decision-search"><strong>Decision-Making as Search</strong></a></li>
+  <li><a href="#uninformed-search"><strong>Uninformed Search Algorithms</strong></a>
+    <ol>
+      <li><a href="#dfs"><strong>Depth-First Search</strong></a></li>
+      <li><a href="#bfs"><strong>Breadth-First Search</strong></a></li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="decision-search"> 1. Decision-Making as Search </h2>
+
+<p>Some of the most fundamental decision-making problems in A.I. can be reduced to the problem of searching for a path in a graph. The nodes of the graph represent the state (of the world, or some system), the arcs of the graph represent (instances of) different actions, and paths in the graph represent sequences of actions. Typically we are interested in paths that start from a given <strong>initial state</strong> and end in a <strong>goal state</strong>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/82156192-7e059480-9897-11ea-8d05-9e1a2ab22a0c.jpg" alt="image alt &gt;&lt;" /></p>
+
+<p>When these graphs are small, the most basic graph algorithms, such as Dijkstra’s algorithm, can be applied. However, in all but the simplest A.I. applications, these graphs have a very large size, making the simplest and most direct ways of finding paths inapplicable. For example, even in very limited systems, like a deck of cards, the number of ways of combining the components of the system can be astronomic: a deck of 52 cards can be shuffled to 52! different orderings. A far higher number of configurations are possible in typical real-world systems. This combinatorial complexity is one of the main reasons for the difficulty of A.I. and the need to develop and deploy more complex programming technologies.</p>
+
+<h3 id="exploring-search-state">Exploring Search State</h3>
+
+<p>Solving a search problem amounts to traversing some (abstract) search space to find a solution, or to spot that no solution exists. Of course, it depends on the problem of what a solution is, but it is typical that the search starts from a certain point in the space and then attempts to approach the point being searched for. In many cases, we are also interested in the route itself and it might form an essential part of the solution such as a plan of what actions to take in the future. Many search problems emerging in A.I. systems can be formalized as state-transition models where</p>
+
+<ul>
+  <li>The system has (or is in) a known particular state.</li>
+  <li>The system is predictable: for any state and any action possible in that state, there is only one possible successor state (determinism of actions), and there are no other causes of change in the system.</li>
+  <li>The objective is to reach a state that belongs to a designated set of goal states.</li>
+</ul>
+
+<p>The choice of actions is up to the agent(s) operating in the system. Different actions and events may lead the system to several successor states.</p>
+
+<p>The two classes of algorithms that are used to traverse the search space are <strong>uniformed</strong> and <strong>informed search algorithms</strong>.</p>
+
+<h2 id="uninformed-search"> 2. Uninformed Search Algorithms </h2>
+
+<p>These algorithms can be understood as uninformed or blind search algorithms because they are just able to detect when a goal has been reached, but they have no idea in which direction the goal(s) are located, nor in how many steps they could be reached.</p>
+
+<p>Below, I have provided a sketch of a generic search algorithm that visits nodes in the order determined by a chosen strategy and, if a node satisfying the goal condition is found, reports on how the node can be reached. Two key concepts underlying the algorithm:</p>
+
+<ol>
+  <li>While traversing the graph, the nodes are visited one at a time and we keep track of visited nodes to avoid loops in the search.</li>
+  <li>The expansion of a node means that each successor node is checked: if it has not been visited, it is visited now and recorded for further (recursive) expansion.</li>
+</ol>
+
+<p>The preceding ideas reveal that we are preparing ourselves to deal with search spaces where a node can be reached through different paths. Let us then formulate the general search algorithm in more detail.</p>
+
+<p>Pseudo Code:</p>
+<blockquote>
+  <p>Inputs: a directed graph with an initial state S, a goal state G, and an expansion strategy E
+Output: a solution path or failure</p>
+
+  <p>Mark S as visited and expand it.</p>
+
+  <p>While there are nodes n recorded for expansion:</p>
+
+  <blockquote>
+    <ol>
+      <li>Choose a node n for expansion according to E.</li>
+      <li>If n is a goal node, return the path from S to n as the solution path.</li>
+      <li>Expand n.</li>
+    </ol>
+  </blockquote>
+
+  <p>Return failure.</p>
+</blockquote>
+
+<hr />
+
+<p>Search algorithms can be compared in terms of their properties.</p>
+
+<ul>
+  <li><strong>Completeness:</strong> An algorithm is <em>complete</em> if it is guaranteed to find a solution to a problem instance when there is one.</li>
+  <li><strong>Termination:</strong> An algorithm is <em>terminating</em> if, for all inputs, it will eventually either return a solution or tell that there are none.</li>
+  <li><strong>Optimality:</strong> An algorithm is <em>optimal</em> if it is guaranteed that a solution found by the algorithm is best possible (such as having the lowest possible cost).</li>
+  <li><strong>Time complexity:</strong> The amount of CPU time required.</li>
+  <li><strong>Space complexity:</strong> The amount of memory required.</li>
+</ul>
+
+<hr />
+
+<p>Next, I will present two basic strategies for the exploration of search spaces. The heart of the strategy goes back to how nodes recorded for expansion are stored and, in case several nodes are waiting for expansion, which node is chosen for expansion. As regards storage, the relevant data structure is a queue and the type of the queue will fix the strategy as well as the resulting search algorithm:</p>
+
+<ol>
+  <li>A last-in-first-out queue (LIFO) also known as a stack gives rise to <strong>depth-first search</strong> (DFS).</li>
+  <li>A first-in-first-out queue (FIFO) yields <strong>breadth-first search</strong> (BFS).</li>
+</ol>
+
+<p>I will illustrate these algorithms by a simple problem in which a robot is moving in a room.</p>
+
+<p><strong>Disclaimer: If you have no prior knowledge in graphs or trees, things will get trickier for you now onwards.</strong></p>
+
+<h3 id="dfs"> 2.1 Depth-First Search (DFS) </h3>
+
+<p>DFS is an algorithm for traversing or searching a graph or a tree data structure. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as deep as possible in each branch before backtracking. In other words, once we start down a path, we don’t stop until we get to the end or the leaf node. Since DFS is based on a stack of nodes recorded for expansion, it will always expand the node found deepest in the search space first.</p>
+
+<p>Below, the robot considers the possible actions in the order N, S, E, and W. This is also the order in which the nodes are pushed on the stack and, naturally, this will affect the order in which nodes are taken into consideration when the recursive expansions of nodes take place.</p>
+
+<p><img src="https://media.giphy.com/media/kboZdgGmPOiKBtLytC/giphy.gif" alt="image alt &gt;&lt;" /></p>
+
+<p>In this case, the net effect of the ordering (N, S, E, W) is actually the reverse: the robot prefers to go west and, if that is not possible, east and, if that is not possible, south and finally, if that is not possible, north. Such a behavior can be recognized from the illustration above.</p>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/82156210-8fe73780-9897-11ea-884e-e9dfc81bc18e.png" alt="image alt &gt;&lt;" /></p>
+
+<p>Let us analyze the operation of the DFS algorithm and stacks resulting from expansions in more detail. The first step corresponds to the initialization of the algorithm from the source node S at coordinates &lt;2,2&gt; and it will visit the nodes &lt;2,3&gt;(for N), &lt;2,1&gt;(S), &lt;3,2&gt;(E), and &lt;1,2&gt;(W). These nodes will not be visited again. After the first expansion step, the node &lt;1,2&gt; appears on the top. It is popped from the stack and expanded next. As a result, two new nodes &lt;1,3&gt; and &lt;1,1&gt; and are visited next and pushed onto the stack. Thus &lt;1,1&gt; is on the top, but its expansion does not lead to any new nodes. The net effect is that it is simply removed from the stack, which reveals the node &lt;1,3&gt; for the next expansion. The only new node encountered is &lt;1,4&gt; (for N) and pushed onto the stack. Thus, it is the next target for expansion. In this way, the search proceeds until the goal node G at &lt;19,9&gt; is found. The solution path can be found by backtracking which is colored red in the final step of the animation.</p>
+
+<p>The DFS algorithm is <strong>complete</strong> if loops are avoided. Otherwise, DFS might enter an infinite loop. In our formulation of the algorithm, we keep track of all visited nodes and hence avoid loops altogether. This might become unfeasible for large search spaces. It is easy to see from the figure that the path found by DFS is not the shortest possible and hence DFS is <strong>not optimal</strong> for our problem. The <strong>time</strong> and <strong>space complexities</strong> are bound by the size of the grid, i.e., they are linear in the size of the input graph (10*20 = 200 nodes). However, if the search space has not been completely enumerated, then time and space complexities are O(<em>b</em><sup><em>m</em></sup>) and O(<em>b</em>*<em>m</em>) where <em>b</em> is the maximum branching factor and <em>m</em> is the maximum depth for encountering any node in the search space.</p>
+
+<h3 id="bfs"> 2.2 Breadth-First Search (BFS) </h3>
+
+<p>The preceding examples nicely illustrate that DFS may end up investigating irrelevant regions of the search space and, perhaps more seriously, may produce a suboptimal path to the goal node. By changing the type of the queue used to store nodes waiting for expansion, such behavior can be avoided and the quality of paths is improved accordingly. The FIFO used by BFS changes the behavior of our basic search algorithm so that nodes closest to the start node in the search space get expanded first.</p>
+
+<p>For the sake of comparison, let us consider the actions of the robot in the order N, S, E, and W. The figure below illustrates how the search space is traversed by the BFS algorithm as well as the path found from S to G in red color.</p>
+
+<p><img src="https://media.giphy.com/media/UWDwGPZCuNkzGarER6/giphy.gif" alt="image alt &gt;&lt;" /></p>
+
+<p>This time, the net effect is that the robot would like to proceed to north and, if that is impossible, to the south and, if that is impossible, to the east and finally, if that is impossible, to west. The subsequent explanation discusses the progression of the search in more detail.</p>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/82156244-ac836f80-9897-11ea-999e-26981e81d782.png" alt="image alt &gt;&lt;" /></p>
+
+<p>The initialization of the search is identical to DFS, but after that, the search proceeds quite differently. Actually, the queue now contains the nodes within (Manhattan) distance 1 from the start node S and that set of nodes can be understood as the search frontier of BFS that will be expanded by nodes further and further away from S. Thus, the node &lt;2,3&gt; will be expanded next and this is how nodes &lt;2,4&gt;, &lt;3,3&gt;, and &lt;1,3&gt; are added to (the end of) the queue. When the next node, i.e., &lt;2,1&gt; , is expanded, two further nodes enter the queue:&lt;3,1&gt; and &lt;1,1&gt;. Similarly, the expansion of &lt;3,2&gt; enters &lt;4,2&gt; to the queue. No new neighbors are encountered when &lt;1,2&gt; is expanded. At this stage, the queue contains all nodes within (Manhattan) distance 2 of from S. In this way, the search proceeds until nodes with distance 30 get handled and the goal node G is found.</p>
+
+<p>Like DFS, the BFS algorithm is also <strong>complete</strong>. It is also <strong>optimal</strong>. As regards the <strong>time complexity</strong> of BFS, it is analogous to that of BFS, i.e., it is O(<em>b</em><sup><em>d</em></sup>) where <em>b</em> is the branching factor and <em>d</em> gives the depth of the (shallowest) solution in the search space. The <strong>space complexity</strong> is also O(<em>b</em><sup><em>d</em></sup>) which is caused by the frontiers maintained by BFS. Their size may become exponential in the worst case because <em>b</em><sup><em>d</em></sup> is exactly the number of leaves in a complete search tree of depth <em>d</em> and branching factor <em>b</em>.</p>
+
+<h3 id="summing-up">Summing Up:</h3>
+
+<p>We saw how we can use the basic uninformed state search algorithms to find a path from an initial state to a goal state. In the next blog, I will talk about how we can make these basic search algorithms a little more intelligent by giving them some form of “vision” with heuristic functions. I will talk about the <strong>Greedy Best-First Search</strong> and <strong>A*</strong> algorithm which is one of the most successful search algorithms to find the shortest path between nodes in a graph.</p>
+
+<p>See you in the next blog!</p>
+
+<p>Head to <a href="/State-Space-Search-Contd/">Part 2.2</a> for Informed Search Methods and <a href="/Introduction-to-AI/">Part 1</a> for basic introduction to A.I.</p>
+
+<p><strong>References:</strong></p>
+
+<ul>
+  <li>S. Russel and P. Norvig: Artificial Intelligence: A Modern Approach, Chapters 3 and 4, 3rd Edition, 2010.</li>
+</ul>
+
+<p><strong>Note: If you think there’s anything wrong in this article or something that can be improved in any way, feel free to point out in the comments.</strong></p>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Artificial+Intelligence+-+Part+2.1%20https%3A%2F%2Fwww.devbae.tech%2FState-Space-Search%2F"
+    class="btn btn-twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Twitter"><i
+      class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2FState-Space-Search%2F"
+    class="btn btn-facebook"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Facebook"><i
+      class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.devbae.tech%2FState-Space-Search%2F"
+    class="btn btn-linkedin"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on LinkedIn"><i
+      class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left"
+              href="/python-command-line/" data-toggle="tooltip"
+              data-placement="top" title="Linux Command Line Utility.">&larr; Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right"
+              href="/State-Space-Search-Contd/" data-toggle="tooltip"
+              data-placement="top" title="Artificial Intelligence - Part 2.2">Next<span class="d-none d-md-inline">
+                Post</span> &rarr;</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" SameSite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>

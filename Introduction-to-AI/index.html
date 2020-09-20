@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Artificial Intelligence - Part 1 - DevBae</title>
+<meta name="description" content="In this series of blogs I aim to introduce a broad introduction to several core areas of Artificial Intelligence. The focus is on what could be characterized as high-level cognitive functions of intelligent systems: thinking/reasoning, problem-solving, decision-making, and planning. These functionalities are central for any intelligent person, creature or device, and shows up in most of the important A.I. applications: What action to take to satisfy given objectives?">
+
+
+<meta name="author" content="Utkarsh Jain">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Artificial Intelligence - Part 1">
+<meta property="og:url" content="https://www.devbae.tech/Introduction-to-AI/">
+
+
+<meta property="og:description" content="In this series of blogs I aim to introduce a broad introduction to several core areas of Artificial Intelligence. The focus is on what could be characterized as high-level cognitive functions of intelligent systems: thinking/reasoning, problem-solving, decision-making, and planning. These functionalities are central for any intelligent person, creature or device, and shows up in most of the important A.I. applications: What action to take to satisfy given objectives?">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-05-10T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/Introduction-to-AI/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Artificial Intelligence - Part 1 - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="In this series of blogs I aim to introduce a broad introduction to several core areas of Artificial Intelligence. The focus is on what could be characterized...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/Introduction-to-AI/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://blog-c7ff.kxcdn.com/blog/wp-content/uploads/2017/04/AI_blog.jpg')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Artificial Intelligence - Part 1</h1>
+            
+              <h2 class="subheading">Introduction to Artificial Intelligence</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  <a target="_blank" href="https://github.com/the-utkarshjain">Utkarsh Jain</a>
+                
+              
+              on May 10, 2020 &middot; <span class="reading-time" title="Estimated read time">
+  
+   9 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+
+        <!-- For single author -->
+        <div class="sidebar-author-details">
+        
+          
+
+          <!-- Check if the user exists in frequent authors (authors.yml) -->
+          
+
+            
+              <!-- Image URL -->
+              <div class="author__avatar">
+                <img src="https://avatars3.githubusercontent.com/u/45516528?s=460v=4"
+                  alt="Utkarsh Jain" itemprop="image">
+              </div>
+            
+
+            <!-- Devbae Name -->
+            <div class="author__content">
+              <h3 class="author__name" itemprop="name">Utkarsh Jain</h3>
+              
+              
+                <div class="author__bio" itemprop="description">
+                  <p>Core Team Member, DevBae</p>
+                </div>
+              
+            </div>
+
+            <!-- Author Links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse btn-show-urls">Follow</button>
+              <ul class="author__urls social-icons">
+
+                <!-- Loop and add the respective links here -->
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="mailto:utkarsh.j.99@gmail.com" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-envelope-square"></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://github.com/the-utkarshjain" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-fw fa-github"></i>
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/iamutkarshjain/" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-linkedin"></i>
+                      <span class="label">Linkedin</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://facebook.com/utkarsh.jain.376" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-facebook"></i>
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://instagram.com/the_utkarshjain" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-instagram"></i>
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div> <!-- End of author links-->
+                
+          
+        </div> <!-- End of sidebar-author-details for multiple authors -->
+
+        <!-- End of if which checks if the site authors are present or not -->
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li><a href="#introduction-to-artificial-intelligence">Introduction to Artificial Intelligence</a></li>
+  <li><a href="#why-is-there-a-need-for-ai">Why is there a need for A.I.?</a>
+    <ul>
+      <li><a href="#ai-technologies">A.I. Technologies</a></li>
+      <li><a href="#ways-to-achieve-ai">Ways to achieve A.I.</a></li>
+      <li><a href="#summing-up">Summing up:</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>In this series of blogs I aim to introduce a broad introduction to several core areas of Artificial Intelligence. The focus is on what could be characterized as high-level cognitive functions of intelligent systems: thinking/reasoning, problem-solving, decision-making, and planning. These functionalities are central for any intelligent person, creature or device, and shows up in most of the important A.I. applications: <strong>What action to take to satisfy given objectives?</strong></p>
+
+<h2 id="introduction-to-artificial-intelligence">Introduction to Artificial Intelligence</h2>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/82156264-c3c25d00-9897-11ea-92a6-16ba81944fb0.png" alt="image alt &gt;&lt;" /></p>
+
+<p>Artificial Intelligence is about software that is more intelligent than conventional software, and maybe, in some respects, as intelligent or more intelligent than human beings.</p>
+
+<p>The concept of Artificial Intelligence was conceived in the 1950ies, and much of its promise still is not there, in the sense that truly intelligent and thinking computers and computer programs still do not exist. Further, there is still much discussion and controversy of what the goal of A.I. is, what type of A.I. is most useful, and whether truly intelligent computer programs are even possible. Today, A.I. could be understood in many alternative ways.</p>
+
+<ul>
+  <li>
+    <p><strong>Strong A.I.:</strong> Software programs that replicate human intelligence, thinking, reasoning, and other capabilities. The idea here is that the A.I. could genuinely be said to be conscious and deeply understand itself and its relation to the world surrounding it. This type of A.I. could directly replace a human being in a broad range of different types of tasks, and it could additionally have some super-human capabilities, thereby being able to outperform humans in many things. J.A.R.V.I.S, which was featured in the Iron Man franchise is an exemplar of strong A.I.</p>
+  </li>
+  <li>
+    <p><strong>Weak A.I.:</strong> Software programs that carry out tasks for which, until now, human beings were required. This type of A.I. does not have to think, the way human beings do. The important thing is that the tasks are complex and difficult from the point of view of human beings performing the task.</p>
+  </li>
+</ul>
+
+<p>All current A.I. systems clearly belong to the latter category of weak A.I., and there is nothing in the horizon of the next 10 or 20 years that would even suggest that general human-level A.I. is anything more but a very remote, hypothetical possibility.</p>
+
+<h2 id="why-is-there-a-need-for-ai">Why is there a need for A.I.?</h2>
+
+<p>To understand this we need to apprehend the difference between conventional software technologies and A.I.</p>
+
+<p>The most basic idea of computation is that some given input is mapped to some deterministic output by some computer program which may use one or more algorithms to reach that output. An example of this would be a computer program which sums two integers. The input is mapped to the output by a defined rule i.e a + b where a and b are the inputs.</p>
+
+<p>This model of computation is very general and can be matched to almost anything, even to types of A.I. used in self-driving cars or A.I. used in smartphones. However, for a complex A.I., like the one used behind a self-driving  car, the mapping from inputs to outputs cannot be described by a single, well-defined rule, as in the case of summation of two numbers. The relations between the input and output are far too complex for that to happen. The behaviour of the car is governed by a large number of algorithms, programs, databases and the coordination and management of all these computations is a very complex affair.</p>
+
+<p>What is the source of all this complexity, and why is this even considered A.I.?
+Things separating A.I. from conventional software and applications are the following. For A.I.:</p>
+
+<ul>
+  <li>Data is incomplete or inaccurate.</li>
+  <li>Relation between inputs and outputs cannot be expressed exactly.</li>
+  <li>Parts of the computation are intractable (NP-hard).</li>
+</ul>
+
+<p>For conventional software:</p>
+
+<ul>
+  <li>All input data is there, and it is accurate.</li>
+  <li>The input-output relation is perfectly defined and well-understood.</li>
+  <li>Computations are tractable (polynomial time).</li>
+  <li>A.I. applications have some forms of incompleteness, imperfection, unpredictability, and the presence of these difficulties typically require complex algorithms, complex reasoning and inference and learning methods.</li>
+</ul>
+
+<h3 id="ai-technologies">A.I. Technologies</h3>
+
+<p>A.I. applications rely on many different technologies. There is no single dominant A.I. technology, and no technology is purely an A.I. technology. All software technologies used in A.I. have applications also outside A.I. There is a continuum between A.I. applications and conventional non-A.I. applications, with no clearly defined boundary between them.</p>
+
+<p>The features of A.I. systems mentioned earlier typically lead to the adoption of one or more of the following types of algorithms, data structures, and other software technologies.</p>
+
+<ul>
+  <li>Search algorithms (systematic, stochastic, combinatorial)</li>
+  <li>Constraint solving and optimization, automated reasoning, theorem proving</li>
+  <li>Decision-making and planning algorithms</li>
+  <li>Statistical data analysis and learning</li>
+</ul>
+
+<p>The grand goal of A.I. is to develop these methods so that they are scalable to problems arising in real-world applications so that the production of useful, truly intelligent software becomes possible. In some application areas this has already been achieved, but for more general forms of intelligence, and for more difficult applications, this goal is still decades away.</p>
+
+<h3 id="ways-to-achieve-ai">Ways to achieve A.I.</h3>
+
+<ul>
+  <li>
+    <p><strong>Symbolic A.I. :</strong> Centuries before A.I., it was understood that one important difference between (intelligent) human beings and not-that-intelligent animals is that human beings are capable of thinking. Deductive reasoning and logical inference were viewed as one of the most important core features of intelligence. This idea looked particularly promising in the 1950ies when some of the first A.I. systems were implemented and seemed to work well. However, the symbolic approach to A.I. ran into problems soon after, when the representation of human language in symbolic representations turned out far more difficult than anticipated. The problem is that most of human thinking and reasoning is not deductive: human beings do not start from facts that are true with full certainty and they don’t even infer or conclude things that follow with full certainty.</p>
+  </li>
+  <li>
+    <p><strong>Sub-Symbolic A.I. :</strong>
+As a reaction to the difficulties of symbolic approaches to general human-like A.I., the idea of doing A.I. without well-defined knowledge representation language gained importance in the 1980ies. The idea was that, if we cannot build a very intelligent A.I. by first building the highest level cognitive functions (represented by symbolic reasoning methods), maybe we should build low-level A.I. first, one that does not need those high level representations and associated cognitive functions.
+In the early 2000s, for example the sub-symbolic approach to natural language translation started to show promise and soon after that sub-symbolic A.I. has gained a lot of importance.</p>
+  </li>
+</ul>
+
+<h3 id="summing-up">Summing up:</h3>
+
+<p>In this blog I have tried to introduce the concept A.I. of and pique curiosity among those with no prior knowledge in this area. In the subsequent few blogs I will try to broadly introduce the main areas of artificial intelligence of importance to Computer Science and IT, including:</p>
+
+<ul>
+  <li>State search and problem-solving</li>
+  <li>Decision making under uncertainty and imperfect informative</li>
+  <li>Decision making under partial-observability</li>
+  <li>Decision making in Multi-Agent settings and Game-Tree Search.</li>
+</ul>
+
+<p>All these concepts require a moderate level understanding of data structures and algorithms and a basic understanding of probability theory and linear algebra.</p>
+
+<p>That would be all for this blog. This is my first article and I hope you found it useful. Thank you!</p>
+
+<p>Checkout <a href="/State-Space-Search/">Part 2.1</a> and <a href="/State-Space-Search-Contd/">Part 2.2</a> of the series to dive deeper into A.I. and learn more.</p>
+
+<p><strong>Interesting Articles:</strong></p>
+
+<ul>
+  <li>A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play. Available at: <a href="https://science.sciencemag.org/content/362/6419/1140">link</a></li>
+  <li>New AI fake text generator may be too dangerous to release, say creators. Available at: <a href="https://www.theguardian.com/technology/2019/feb/14/elon-musk-backed-ai-writes-convincing-news-fiction">link</a></li>
+</ul>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Artificial+Intelligence+-+Part+1%20https%3A%2F%2Fwww.devbae.tech%2FIntroduction-to-AI%2F"
+    class="btn btn-twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Twitter"><i
+      class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2FIntroduction-to-AI%2F"
+    class="btn btn-facebook"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Facebook"><i
+      class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.devbae.tech%2FIntroduction-to-AI%2F"
+    class="btn btn-linkedin"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on LinkedIn"><i
+      class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left"
+              href="/web-scraping/" data-toggle="tooltip"
+              data-placement="top" title="Web Scraping - The Python Way!">&larr; Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right"
+              href="/python-command-line/" data-toggle="tooltip"
+              data-placement="top" title="Linux Command Line Utility.">Next<span class="d-none d-md-inline">
+                Post</span> &rarr;</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" SameSite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>

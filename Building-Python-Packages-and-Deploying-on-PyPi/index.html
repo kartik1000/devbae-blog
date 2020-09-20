@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Building Python Packages and Deploying on PyPI - DevBae</title>
+<meta name="description" content="If python is your favourite language and you love building python modules, then you are at the right place!! Every python developer must know how to packge the python code and deploy on PyPI (Python Package Index) where it is publicly available to install via pip. I will be explaining it all in a very simple and systematic manner which will be easy and quick for beginners to understand and for experts to refer to any specific section if stuck. Let’s get started!!">
+
+
+<meta name="author" content="Palak Gupta">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Building Python Packages and Deploying on PyPI">
+<meta property="og:url" content="https://www.devbae.tech/Building-Python-Packages-and-Deploying-on-PyPi/">
+
+
+<meta property="og:description" content="If python is your favourite language and you love building python modules, then you are at the right place!! Every python developer must know how to packge the python code and deploy on PyPI (Python Package Index) where it is publicly available to install via pip. I will be explaining it all in a very simple and systematic manner which will be easy and quick for beginners to understand and for experts to refer to any specific section if stuck. Let’s get started!!">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-06-04T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/Building-Python-Packages-and-Deploying-on-PyPi/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Building Python Packages and Deploying on PyPI - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="If python is your favourite language and you love building python modules, then you are at the right place!! Every python developer must know how to packge t...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/Building-Python-Packages-and-Deploying-on-PyPi/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://miro.medium.com/max/878/1*86KH2gnGpfLWA8uFngCUXA.png')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Building Python Packages and Deploying on PyPI</h1>
+            
+              <h2 class="subheading">Understanding Python Package Index</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  <a target="_blank" href="https://github.com/palakgupta889">Palak Gupta</a>
+                
+              
+              on June 04, 2020 · <span class="reading-time" title="Estimated read time">
+  
+   8 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+
+        <!-- For single author -->
+        <div class="sidebar-author-details">
+        
+          
+
+          <!-- Check if the user exists in frequent authors (authors.yml) -->
+          
+
+            
+              <!-- Image URL -->
+              <div class="author__avatar">
+                <img src="https://avatars1.githubusercontent.com/u/32836916" alt="Palak Gupta" itemprop="image">
+              </div>
+            
+
+            <!-- Devbae Name -->
+            <div class="author__content">
+              <h3 class="author__name" itemprop="name">Palak Gupta</h3>
+              
+              
+                <div class="author__bio" itemprop="description">
+                  <p>Connect with me on LinkedIn!</p>
+                </div>
+              
+            </div>
+
+            <!-- Author Links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse btn-show-urls">Follow</button>
+              <ul class="author__urls social-icons">
+
+                <!-- Loop and add the respective links here -->
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="mailto:palakgupta889@gmail.com" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-envelope-square"></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://github.com/palakgupta889" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-github"></i>
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/palakgupta889" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-linkedin"></i>
+                      <span class="label">Linkedin</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div> <!-- End of author links-->
+                
+          
+        </div> <!-- End of sidebar-author-details for multiple authors -->
+
+        <!-- End of if which checks if the site authors are present or not -->
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li>
+<a href="#package"> Packaging your Python Code </a>
+    <ul>
+      <li><a href="#1-starting-with-small-python-modules">1. Starting with small python modules</a></li>
+      <li><a href="#2-adding-required-files-to-build-the-code-into-a-package">2. Adding required files to build the code into a package</a></li>
+      <li><a href="#3-testing-your-code">3. Testing your Code</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#pypi"> Deploying your Package on PyPI </a>
+    <ul>
+      <li><a href="#1-setting-up-and-installing-the-requirements">1. Setting up and installing the requirements</a></li>
+      <li>
+<a href="#2-testing-your-package">2. Testing your Package</a>
+        <ul>
+          <li><a href="#pypi-vs-test-pypi">PyPI vs. Test PyPI</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-uploading-your-package">3. Uploading your package</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>If python is your favourite language and you love building python modules, then you are at the right place!! Every python developer must know how to packge the python code and deploy on PyPI (Python Package Index) where it is publicly available to install via pip. I will be explaining it all in a very simple and systematic manner which will be easy and quick for beginners to understand and for experts to refer to any specific section if stuck. Let’s get started!!</p>
+
+<p>We’ll be learning the following topics:-</p>
+
+<ol>
+  <li><strong><a href="#package">Packaging your Python Code</a></strong></li>
+  <li><strong><a href="#pypi">Deploying your Package on PyPI</a></strong></li>
+</ol>
+
+<p>Check out my github repo for building and deploying a self-made python package <a href="https://github.com/palakgupta889/Deploying-a-package-on-PyPi">here</a>.</p>
+
+<h2 id="package"> Packaging your Python Code </h2>
+
+<h3 id="1-starting-with-small-python-modules">1. Starting with small python modules</h3>
+
+<p>Let us assume we have the following directory tree structure:
+<img src="https://i.ibb.co/XV1M4CZ/p1.png" alt="image alt &gt;&lt;"></p>
+
+<h3 id="2-adding-required-files-to-build-the-code-into-a-package">2. Adding required files to build the code into a package</h3>
+
+<p>You will need to add the following additional files to be able to package the above python code:</p>
+
+<ol>
+  <li>
+    <p><strong>__init__.py</strong> file in my_package folder (required) -  It denotes the root of your package in which you can keep your package constants, your documentations and so on. If you don’t want to add anything in it, you may keep it as an empty file but it’s required.</p>
+  </li>
+  <li>
+    <p><strong>setup.py</strong> file in parent folder (required) - This file is used to configure your package. It contains the basic information realted to the package. Below is the setup.py file from my package code uploaded on my <a href="https://github.com/palakgupta889/Deploying-a-package-on-PyPi">github repo</a>.
+<img src="https://i.ibb.co/jhpBrtr/p4.png" alt="image alt &gt;&lt;"> You need to find a good and a unique name for your package as PyPI already has more than 150,000 packages. You can use the PyPI search to verify whether the package name you are planning is already used or not.
+Remember to change the version if you again upload the package on PyPI after more updates.</p>
+  </li>
+  <li>
+    <p><strong>license.txt</strong> file in my_package folder (optional) - You may add the open souce MIT license. Available at: <a href="https://opensource.org/licenses/MIT">link</a></p>
+  </li>
+  <li>
+    <p><strong>README.md</strong> file in my_package folder (optional but recommended) - Documenting your package before releasing it is an important step. Add the description, installation instructions, summary etc. of your package within this file.</p>
+  </li>
+  <li>
+    <p><strong>tests.py</strong> in parent directory (optional) - You can read more on how to write tests for testing your code <a href="https://docs.python.org/3/library/unittest.html">here</a>. Check out the sample tests on my <a href="https://github.com/palakgupta889/Deploying-a-package-on-PyPi">github repo</a>.</p>
+  </li>
+</ol>
+
+<p>The new directory tree structure looks like this:
+<img src="https://i.ibb.co/N2HY4mz/p2.png" alt="image alt &gt;&lt;"></p>
+
+<p>Note that all the source code of the package is in <strong>my_package</strong> subdirectory.</p>
+
+<h3 id="3-testing-your-code">3. Testing your Code</h3>
+
+<p>After you’re ready with the package, it’s a good software practice to test out your code using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> utility of python. Unit Testing is the first level of software testing where the smallest testable parts of a software are tested. This is used to validate that each unit of the software performs as designed. Type the following in the terminal from the parent directory:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="p">.</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span> <span class="n">test</span>
+</code></pre></div></div>
+
+<p>Note that if you change the code in the main package folder after pip installing the package, python will not know about the changes. You’ll need to run <code class="highlighter-rouge">pip install --upgrade .</code> when you make changes to the package files.</p>
+
+<h2 id="pypi"> Deploying your Package on PyPI </h2>
+
+<h3 id="1-setting-up-and-installing-the-requirements">1. Setting up and installing the requirements</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">twine</span>
+<span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">bdist_wheel</span>
+</code></pre></div></div>
+
+<p>Twine is a utility for publishing Python packages on PyPI.</p>
+
+<p>The second command will output a folder called dist having a .tar.gz file and a .whl file. The .tar.gz file is called a <em>source archive</em> whereas the .whl file is a <em>built distribution</em>. Alternatively, you can also use <code class="highlighter-rouge">python setup.py sdist</code>, where you will get only .tar.gz file in dist folder.</p>
+
+<p>The .whl file is a newer type of installation file for Python packages. When you pip install a package, pip will first look for a .whl file (wheel file) and if there isn’t one, it will then look for the .tar.gz file. A tar.gz file contains the files needed to compile and install a Python package. A whl file only needs to be copied to the proper place for installation. Behind the scenes, pip installing a whl file has fewer steps than a tar.gz file.</p>
+
+<h3 id="2-testing-your-package">2. Testing your Package</h3>
+
+<p>Run <code class="highlighter-rouge">twine check dist/*</code> in the parent folder to check if your package description will render properly on PyPI.</p>
+
+<h4 id="pypi-vs-test-pypi">PyPI vs. Test PyPI</h4>
+
+<p>TestPyPI is a separate instance of the Python Package Index that allows you to try distribution tools and processes without affecting the real index. When you type <code class="highlighter-rouge">pip install &lt;package-name&gt;</code> to download any package, it is downloaded from pypi.org and not from test.pypi.org. Keep in mind that pypi.org and test.pypi.org are two different websites! You’ll need to register separately at each website. Keep your username and password of both the sites handy as you will need to enter them when uploading the package through twine.</p>
+
+<p><strong>Tip</strong>: First upload the package on test.pypi.org, and install from here to check if it is correctly installing on the system. Now when you are confident that there is no issue, upload the package on pypi.org which will be publicly available for anyone to install.</p>
+
+<h5 id="commands-to-upload-and-install-package-from-the-pypi-test-repository">Commands to upload and install package from the pypi test repository</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">twine</span> <span class="n">upload</span> <span class="o">--</span><span class="n">repository</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="p">.</span><span class="n">pypi</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">legacy</span><span class="o">/</span> <span class="n">dist</span><span class="o">/*</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="p">.</span><span class="n">pypi</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Yayy!! Finally you are ready to upload your package to the Python Package Index!</strong></p>
+
+<h3 id="3-uploading-your-package">3. Uploading your package</h3>
+
+<h5 id="commands-to-upload-and-install-package-from-the-pypi-repository">Commands to upload and install package from the pypi repository</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">twine</span> <span class="n">upload</span> <span class="n">dist</span><span class="o">/*</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Remember</strong> that your package name must be unique!! If you use a package name that is already taken, you will get an error when trying to upload the package.</p>
+
+<p><strong>CONGRATULATIONS!!</strong> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"> You have successfully learned how to build and deploy packages on PyPI. Now go and build your own package and upload on PyPI and tell your friends to <code class="highlighter-rouge">pip install YOUR_PACKAGE</code> !! <img class="emoji" title=":fire:" alt=":fire:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"></p>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Building+Python+Packages+and+Deploying+on+PyPI%20https%3A%2F%2Fwww.devbae.tech%2FBuilding-Python-Packages-and-Deploying-on-PyPi%2F" class="btn btn-twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2FBuilding-Python-Packages-and-Deploying-on-PyPi%2F" class="btn btn-facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.devbae.tech%2FBuilding-Python-Packages-and-Deploying-on-PyPi%2F" class="btn btn-linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a>
+</noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left" href="/State-Space-Search-Contd/" data-toggle="tooltip" data-placement="top" title="Artificial Intelligence - Part 2.2">← Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right" href="/prod-grade-code/" data-toggle="tooltip" data-placement="top" title="Writing Production Grade Code and Distributing it">Next<span class="d-none d-md-inline">
+                Post</span> →</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright © DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" samesite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>

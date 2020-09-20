@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Writing Production Grade Code and Distributing it - DevBae</title>
+<meta name="description" content="Imagine you are in a desert and you only have one bottle packed in a Japanese puzzle box with no documentation on how to open it.">
+
+
+<meta name="author" content="Shreyas Bapat">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Writing Production Grade Code and Distributing it">
+<meta property="og:url" content="https://www.devbae.tech/prod-grade-code/">
+
+
+<meta property="og:description" content="Imagine you are in a desert and you only have one bottle packed in a Japanese puzzle box with no documentation on how to open it.">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-06-08T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/prod-grade-code/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Writing Production Grade Code and Distributing it - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="Imagine you are in a desert and you only have one bottle packed in a Japanese puzzle box with no documentation on how to open it.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/prod-grade-code/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://i.morioh.com/200701/df6cd42c.jpg')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Writing Production Grade Code and Distributing it</h1>
+            
+              <h2 class="subheading">Code that makes everyone happy!</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  <a target="_blank" href="https://github.com/shreyasbapat">Shreyas Bapat</a>
+                
+              
+              on June 08, 2020 &middot; <span class="reading-time" title="Estimated read time">
+  
+   24 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+
+        <!-- For single author -->
+        <div class="sidebar-author-details">
+        
+          
+
+          <!-- Check if the user exists in frequent authors (authors.yml) -->
+          
+
+            
+              <!-- Image URL -->
+              <div class="author__avatar">
+                <img src="https://avatars0.githubusercontent.com/u/24257914"
+                  alt="Shreyas Bapat" itemprop="image">
+              </div>
+            
+
+            <!-- Devbae Name -->
+            <div class="author__content">
+              <h3 class="author__name" itemprop="name">Shreyas Bapat</h3>
+              
+              
+                <div class="author__bio" itemprop="description">
+                  <p>Organisation Admin, EinsteinPy</p>
+                </div>
+              
+            </div>
+
+            <!-- Author Links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse btn-show-urls">Follow</button>
+              <ul class="author__urls social-icons">
+
+                <!-- Loop and add the respective links here -->
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="mailto:bapat.shreyas@gmail.com" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-envelope-square"></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://github.com/shreyasbapat" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-github"></i>
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://shreyasb.com/" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-fw fa-link"></i>
+                      <span class="label">Website</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div> <!-- End of author links-->
+                
+          
+        </div> <!-- End of sidebar-author-details for multiple authors -->
+
+        <!-- End of if which checks if the site authors are present or not -->
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li><a href="#package-template">Package Template</a></li>
+  <li><a href="#what-will-go-where">What will go where?</a></li>
+  <li><a href="#code-linting">Code linting</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#distributing">Distributing</a></li>
+  <li><a href="#choosing-a-licence-for-your-package">Choosing a Licence for your package</a>
+    <ul>
+      <li><a href="#more-permissive">More Permissive</a></li>
+      <li><a href="#less-permissive">Less Permissive</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>Imagine you are in a desert and you only have one bottle packed in a Japanese puzzle box with no documentation on how to open it.</p>
+
+<p>Felt bad right? That exactly what happens when anyone looks at a poorly documented, badly written code and wants to work on it.</p>
+
+<p>I recently worked on a code and it was a nightmare for me to appreciate what they did just by looking at the code. There was no good API Documentation, there were no examples, code was poorly linted and it’s <code class="highlighter-rouge">setup.py</code> was one big mess.</p>
+
+<p>Over these 4 years, I have realized that everyone tells you how to publish your code, as in a <a href="/Building-Python-Packages-and-Deploying-on-PyPi/">previous article</a> in DevBae, but no one tells you how to write it in a way that it’ll be usable and people will be able to read it/understand it/redistribute it.</p>
+
+<p>There are some considerations when you write your code. These will be:</p>
+
+<ul>
+  <li>Am I going to publish it?
+    <ul>
+      <li>If yes, where? (One option is definitely PyPI)</li>
+    </ul>
+  </li>
+  <li>Am I going to write the documentation for it?</li>
+  <li>What Licence am I going to use? [VERY VERY VERY CRITICAL]</li>
+  <li>Am I going to opensource my code?
+    <ul>
+      <li>If yes, am I going to open it for contributions from the larger community?</li>
+      <li>How will I make sure that the coding style is consistent even if there are 300 contributors to my codebase?</li>
+      <li>What kind of community I am looking at?</li>
+    </ul>
+  </li>
+  <li>What kind of support will I provide to the users?</li>
+</ul>
+
+<p>And the list goes on. I will try to answer most of these questions in this article. I will also add up a few extra things and some lifechanging tools which you can use to make your lives easier.</p>
+
+<h2 id="package-template">Package Template</h2>
+
+<p>The code that you have written in a <code class="highlighter-rouge">main.py</code> file is not at all distribution friendly. You first need to work on creating all the meta files for your package. The package template suggested in a <a href="https://devbae.tech/2020/06/04/Building-Python-Packages-and-Deploying-on-PyPi.html">previous blog</a> is a starting point. I hope you all have understood how to write tests, setup files, etc. We will still work on that but read the previous blog first if you haven’t.</p>
+
+<p>Since past few years, Python packages have changed a lot. <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> made <code class="highlighter-rouge">pip</code> change it’s definition completely. Earlier, it used to be very similar to <code class="highlighter-rouge">python setup.py</code> but nowadays, it doesn’t matter if you have a <code class="highlighter-rouge">setup.py</code> file in your Python Package or not. The most important file now is <code class="highlighter-rouge">pyproject.toml</code>. However, that’s a story of a different article. Through this article, we will understand how to first migrate from <code class="highlighter-rouge">setup.py</code> to something more recent. We will learn how to configure <code class="highlighter-rouge">setup.cfg</code> for our packages. <a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#configuring-setup-using-setup-cfg-files">setuptools</a> documentation sheds an amazing amount of light on how to do that. But we will still have a look at an example. Before we start, I will start by suggesting a package template.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">packagename</span><span class="o">/</span>
+<span class="o">|</span>
+<span class="o">|--</span><span class="n">docs</span><span class="o">/</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">source</span><span class="o">/</span>
+<span class="o">|</span>     <span class="o">|--</span><span class="n">conf</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>     <span class="o">|--</span><span class="n">index</span><span class="p">.</span><span class="n">rst</span>
+<span class="o">|</span>     <span class="o">|--</span><span class="n">_static</span><span class="o">/</span>
+<span class="o">|</span>
+<span class="o">|--</span><span class="n">src</span><span class="o">/</span><span class="n">packagename</span><span class="o">/</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">code1</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">code2</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>
+<span class="o">|--</span><span class="n">tests</span><span class="o">/</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">test_code1</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>  <span class="o">|--</span><span class="n">test_code2</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|</span>
+<span class="o">|--</span><span class="n">pyproject</span><span class="p">.</span><span class="n">toml</span>
+<span class="o">|--</span><span class="n">setup</span><span class="p">.</span><span class="n">cfg</span>
+<span class="o">|--</span><span class="n">setup</span><span class="p">.</span><span class="n">py</span>
+<span class="o">|--</span><span class="p">.</span><span class="n">readthedocs</span><span class="p">.</span><span class="n">yml</span>
+<span class="o">|--</span><span class="p">.</span><span class="n">gitignore</span>
+</code></pre></div></div>
+
+<p>You can do this very easily on your own, or just use this awesome <a href="https://github.com/astrojuanlu/cookiecutter-pylib">cookiecutter template</a> developed by my friend and mentor <a href="https://github.com/astrojuanlu">Juan Luis Cano Rodríguez</a>. But remember that the cookiecutter template is extremely modern and doesn’t include a <code class="highlighter-rouge">setup.py</code> at all. If you want a slow migration guide, keep reading.</p>
+
+<h2 id="what-will-go-where">What will go where?</h2>
+
+<p>Considering the fact that you already know how to write <code class="highlighter-rouge">setup.py</code>, we will now decide how to make the package more modern by moving everything to <code class="highlighter-rouge">setup.cfg</code>. One very heavy fact (not easily digestible) is that we no longer use <code class="highlighter-rouge">requirements.txt</code> for dependency management in a package. So all you have to first do is create a <code class="highlighter-rouge">requirements.txt</code> and leave it blank.</p>
+
+<p>Now, you r <code class="highlighter-rouge">setup.cfg</code> has to be populated with (Remove all the comments):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">metadata</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">packagename</span>
+<span class="n">version</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">.</span><span class="n">dev0</span>  <span class="c1">#Use Semantic Versioning
+</span><span class="n">author</span> <span class="o">=</span> <span class="n">Shreyas</span> <span class="n">Bapat</span>
+<span class="n">author_email</span> <span class="o">=</span> <span class="n">hello</span><span class="o">@</span><span class="n">shreyasb</span><span class="p">.</span><span class="n">com</span>
+<span class="n">license</span> <span class="o">=</span> <span class="n">MIT</span>       <span class="c1">#Whatever suits best               
+</span><span class="n">description</span> <span class="o">=</span> <span class="n">A</span> <span class="n">one</span> <span class="n">liner</span> <span class="n">about</span> <span class="n">my</span> <span class="n">package</span>
+<span class="n">keywords</span> <span class="o">=</span>
+    <span class="n">python</span>
+    <span class="n">awesometask</span>
+    <span class="n">iitmandi</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">shreyasb</span><span class="p">.</span><span class="n">com</span> <span class="c1">#Your personal/package website
+</span><span class="n">download_url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">shreyasbapat</span><span class="o">/</span><span class="n">package</span> <span class="c1">#GitHub Repo
+</span><span class="n">long_description</span> <span class="o">=</span> <span class="nb">file</span><span class="p">:</span> <span class="n">README</span><span class="p">.</span><span class="n">rst</span>
+<span class="n">classifiers</span> <span class="o">=</span>
+        <span class="n">Development</span> <span class="n">Status</span> <span class="p">::</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">Beta</span>
+        <span class="n">Intended</span> <span class="n">Audience</span> <span class="p">::</span> <span class="n">Education</span>
+        <span class="n">Intended</span> <span class="n">Audience</span> <span class="p">::</span> <span class="n">Science</span><span class="o">/</span><span class="n">Research</span>
+        <span class="n">License</span> <span class="p">::</span> <span class="n">OSI</span> <span class="n">Approved</span> <span class="p">::</span> <span class="n">MIT</span> <span class="n">License</span>
+        <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">OS</span> <span class="n">Independent</span>
+        <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span>
+        <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mi">3</span>
+        <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.6</span>
+        <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.7</span>
+        <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.8</span>
+        <span class="n">Topic</span> <span class="p">::</span> <span class="n">Scientific</span><span class="o">/</span><span class="n">Engineering</span>
+<span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<span class="n">package_dir</span> <span class="o">=</span>
+    <span class="o">=</span> <span class="n">src</span>
+<span class="n">packages</span> <span class="o">=</span> <span class="n">find</span><span class="p">:</span>
+<span class="n">zip_safe</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">install_requires</span> <span class="o">=</span>
+        <span class="n">numpy</span>
+        <span class="n">astropy</span>
+        <span class="n">matplotlib</span>
+        <span class="n">scipy</span><span class="o">&gt;=</span><span class="mf">1.0</span>
+        <span class="n">plotly</span><span class="o">&gt;=</span><span class="mf">4.0</span>
+        <span class="n">sympy</span><span class="o">&gt;=</span><span class="mf">1.1</span>
+        <span class="n">numba</span> <span class="o">&gt;=</span><span class="mf">0.46</span><span class="p">,</span><span class="o">!=</span><span class="mf">0.49</span><span class="p">.</span><span class="mi">0</span> <span class="p">;</span> <span class="n">implementation_name</span><span class="o">==</span><span class="s">'cpython'</span>
+<span class="n">include_package_data</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">python_requires</span> <span class="o">=</span> <span class="o">&gt;=</span><span class="mf">3.6</span>
+<span class="p">[</span><span class="n">options</span><span class="p">.</span><span class="n">packages</span><span class="p">.</span><span class="n">find</span><span class="p">]</span>
+<span class="n">where</span> <span class="o">=</span> <span class="n">src</span>
+<span class="p">[</span><span class="n">options</span><span class="p">.</span><span class="n">extras_require</span><span class="p">]</span>
+<span class="n">dev</span> <span class="o">=</span>
+        <span class="n">black</span> <span class="p">;</span> <span class="n">python_version</span><span class="o">&gt;=</span><span class="s">"3.6"</span>
+        <span class="n">coverage</span>
+        <span class="n">isort</span>
+        <span class="n">pytest</span>
+        <span class="n">pytest</span><span class="o">-</span><span class="n">xdist</span>
+        <span class="n">pytest</span><span class="o">-</span><span class="n">cov</span><span class="o">&lt;</span><span class="mf">2.6</span><span class="p">.</span><span class="mi">0</span>
+        <span class="n">pycodestyle</span>
+        <span class="n">sphinx</span>
+        <span class="n">alabaster</span>
+        <span class="n">tox</span>
+<span class="p">[</span><span class="n">tool</span><span class="p">:</span><span class="n">pytest</span><span class="p">]</span>
+<span class="n">norecursedirs</span> <span class="o">=</span>
+    <span class="p">.</span><span class="n">git</span>
+    <span class="n">dist</span>
+    <span class="n">build</span>
+<span class="n">python_files</span> <span class="o">=</span>
+    <span class="n">test_</span><span class="o">*</span><span class="p">.</span><span class="n">py</span>
+<span class="n">doctest_plus</span> <span class="o">=</span> <span class="n">disabled</span>
+<span class="n">addopts</span> <span class="o">=</span> <span class="o">--</span><span class="n">strict</span>
+<span class="n">markers</span> <span class="o">=</span>
+    <span class="n">slow</span>
+    <span class="n">remote_data</span>
+    <span class="n">filterwarnings</span>
+    <span class="n">mpl_image_compare</span>
+<span class="p">[</span><span class="n">flake8</span><span class="p">]</span>
+<span class="n">ignore</span> <span class="o">=</span> <span class="n">E203</span><span class="p">,</span> <span class="n">E266</span><span class="p">,</span> <span class="n">E501</span><span class="p">,</span> <span class="n">W503</span>
+<span class="nb">max</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">length</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="nb">max</span><span class="o">-</span><span class="n">complexity</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">select</span> <span class="o">=</span> <span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">T4</span><span class="p">,</span><span class="n">B9</span>
+</code></pre></div></div>
+
+<p>Your <code class="highlighter-rouge">setup.py</code> now will just look like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="c1"># https://packaging.python.org/guides/single-sourcing-package-version/
+# http://blog.ionelmc.ro/2014/05/25/python-packaging/
+</span><span class="n">setup</span><span class="p">(</span><span class="n">setup_cfg</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That’s it. This is all you have to do.</p>
+
+<p>Now there are various parts of this file. Let’s look at some of them and understand what they do.</p>
+
+<p>1) <strong>install_requires</strong> : The section of install requires in the <code class="highlighter-rouge">setup.cfg</code> is there to mention all the dependencies of the project. All this will be installed automatically when you will <code class="highlighter-rouge">pip install packagename</code>.</p>
+
+<p>2) <strong>python_requires</strong> : It specifies the minimum Python version you support for the package.</p>
+
+<p>3) <strong>options.extras_require</strong> : These are the dependencies that you don’t want your users to install but, they are essential for development. All this will be installed when you do <code class="highlighter-rouge">pip install packagename/[dev]</code>.</p>
+
+<p>You can ignore the rest for now. Now if you look closely, you will find three development dependencies you will not understand. Black, isort, and sphinx. I will try to explain what these are in the next sections.</p>
+
+<h2 id="code-linting">Code linting</h2>
+
+<p>I will start by quoting the zen of Python :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+</code></pre></div></div>
+
+<p>This <code class="highlighter-rouge">easter egg</code> was introduced in <a href="https://www.python.org/dev/peps/pep-0020/">PEP 20</a> and can be reproduced by writing :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">this</span>
+</code></pre></div></div>
+
+<p>One of Guido’s key insights is that code is read much more often than it is written. Code linting guidelines are intended to improve the readability of code and make it consistent across the wide spectrum of Python code. As PEP 20 says, “Readability counts”.
+A style guide is about consistency. Consistency within a project is more important. Consistency within one module or function is the most important.</p>
+
+<p>However, know when to be inconsistent – sometimes style guide recommendations just aren’t applicable. When in doubt, use your best judgment. Look at other examples and decide what looks best.</p>
+
+<p>An excerpt from <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>:</p>
+
+<blockquote>
+  <p>When applying the guideline would make the code less readable, even for someone who is used to reading code that follows this PEP.
+To be consistent with surrounding code that also breaks it (maybe for historic reasons) – although this is also an opportunity to clean up someone else’s mess (in true XP style).
+Because the code in question predates the introduction of the guideline and there is no other reason to be modifying that code.
+When the code needs to remain compatible with older versions of Python that don’t support the feature recommended by the style guide.</p>
+</blockquote>
+
+<p>Keeping this in mind that using PEP 8 can actually hamper the readability of the code, many people stopped using PEP8, and maintainability of the public codes started to go down. You have to understand that while reviewing the submitted patches, you get to look at the diff. Sometimes the diff can be overwhelming. And when the diffs are ignored and few parts of the code are merged without a proper review as they are hard to read, a strong technical debt is introduced which continues for years and is difficult to resolve.
+That’s why we should always avoid <strong>Technical Debts</strong>. You must ask if PEP 8 can’t help, what can?</p>
+
+<p>The same question came into the mind of a few developers who found simple PEP 8 as useless and difficult to maintain. They created <a href="https://black.readthedocs.io/en/stable/">Black</a>. They found workarounds in PEP 8 and created a code formatter which complies with PEP8 while giving a maintainable code.</p>
+
+<p>In their own words:</p>
+<blockquote>
+  <p>Black makes code review faster by producing the smallest diffs possible. Blackened code looks the same regardless of the project you’re reading. Formatting becomes transparent after a while and you can focus on the content instead.
+In this way, you can use <code class="highlighter-rouge">Black</code> to format your code and make the same compulsion on all the patches. This will increase readability and maintainability.</p>
+</blockquote>
+
+<p>There’s <code class="highlighter-rouge">isort</code> as well. It does a magical thing of making all the imports in a consistent order. For example, for a file like this,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">main</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+</code></pre></div></div>
+
+<p>it will analyze which are the core modules, which are your local modules and what kind of imports are there and then rearrange them to :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span>
+<span class="kn">import</span> <span class="nn">main</span>
+</code></pre></div></div>
+
+<p>Beautiful right? This is also intended to increase code readability and maintainability.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Modern projects use Sphinx for automatic documentation generation. Sphinx is a tool that makes it easy to create intelligent and beautiful documentation, written by Georg Brandl and licensed under the BSD license.</p>
+
+<p>It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages.</p>
+
+<p>Some pointers on sphinx:</p>
+
+<ul>
+  <li>Output formats: HTML (including Windows HTML Help), LaTeX (for printable PDF versions), ePub, Texinfo, manual pages, plain text</li>
+  <li>Extensive cross-references: semantic markup and automatic links for functions, classes, citations, glossary terms and similar pieces of information</li>
+  <li>Hierarchical structure: easy definition of a document tree, with automatic links to siblings, parents, and children</li>
+  <li>Automatic indices: general index as well as a language-specific module indices</li>
+  <li>Code handling: automatic highlighting using the Pygments highlighter</li>
+  <li>Extensions: automatic testing of code snippets, inclusion of docstrings from Python modules (API docs), and more</li>
+  <li>Contributed extensions: more than 50 extensions contributed by users in a second repository; most of them installable from PyPI</li>
+  <li>Sphinx uses reStructuredText as its markup language, and many of its strengths come from the power and straightforwardness of reStructuredText and its parsing and translating suite, the Docutils.</li>
+</ul>
+
+<p>So all you have to do is write good docstrings, understand how sphinx works, and you are good to go. I suggest using numpy like docstrings for classes and methods. One example of the same would be:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+   <span class="s">"""
+   Some information about the function.
+   Parameters
+   ----------
+   x : type
+      Description of parameter `x`.
+   y : type, optional
+      Description of parameter `y` (with type not specified)
+   Returns
+   -------
+   int
+      Description of the anonymous integer return value.
+   Raises
+   ------
+   LinAlgException
+       If the matrix is not numerically invertible.
+   """</span>
+   <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>These docstrings are written in <code class="highlighter-rouge">reStructuredText</code> and are automatically picked up by sphinx if used.</p>
+
+<p>You should also maintain a <code class="highlighter-rouge">CHANGELOG</code> for keeping a track of what changes every release, who are the people who contributed to the release, who amongst them are first time contributors, etc. This helps people understand what is changing in the software, what’s new and what’s deprecated without looking at the code.</p>
+
+<h2 id="distributing">Distributing</h2>
+
+<p>There are typically 2 major modes if distribution in Python:</p>
+
+<ol>
+  <li>PyPI</li>
+  <li>conda</li>
+</ol>
+
+<p>You can see how to publish/distribute packages on PyPI in the previous article. I will explain how you can do that for <code class="highlighter-rouge">conda</code>. You will have to use something called <a href="https://conda-forge.org/">conda forge</a>. You will have to add a recipe in conda first and let conda forge verify that your package is well maintained. Here’s how you do that:</p>
+
+<ul>
+  <li>Fork <a href="https://github.com/conda-forge/staged-recipes">conda-forge/staged-recipes</a></li>
+  <li>Create a new branch from the staged-recipes master branch.</li>
+  <li>Add a new conda recipe in a new “recipes/[your-package-name]” directory. There is an example of a well-written recipe in “recipes/example” you can copy.</li>
+  <li>See <a href="https://conda-forge.org/docs/maintainer/adding_pkgs.html#the-recipe-meta-yaml">this</a> for understanding how to write the <code class="highlighter-rouge">meta.yaml</code>.</li>
+  <li>Propose the change as a pull request. Your recipe will automatically be built on Windows, Linux, and OSX to test that it works, but the distribution will not yet be available on the conda-forge channel.</li>
+  <li>Once the recipe is ready it will be merged and a new “feedstock” repository will automatically be created for the recipe. The build and upload processes take place in the feedstock, and once complete the package will be available on the conda-forge channel.</li>
+</ul>
+
+<p>Then you can happily do: <code class="highlighter-rouge">conda install -c conda-forge packagename</code>!</p>
+
+<p>Cool right? But what if I told you, you can also publish it on things like <code class="highlighter-rouge">apt</code>. For that, you will have to contact someone in Debian Ecosystem(Also me :p). It’s not open access. You have to be authorized to create a repository in <a href="https://salsa.debian.org">debian salsa</a>. So, the best shot is to contact an existing maintainer. If you are developing a python package for astronomy, I can help you put that in Debian Astro very easily. For others, I will have to go through a process, but I can certainly help you.</p>
+
+<p>In the end, you will have <code class="highlighter-rouge">sudo apt install python3-packagename</code> for your package.</p>
+
+<h2 id="choosing-a-licence-for-your-package">Choosing a Licence for your package</h2>
+
+<p>You SHOULD ALWAYS NAME YOUR LICENCE FILE AS <strong>COPYING</strong>. Don’t ask why, just do it. The reasons for that are beyond the scope of this article.</p>
+
+<p><img src="https://www2.cs.duke.edu/courses/compsci308/spring17/classwork/opensource/licenses.png" alt="image alt &gt;&lt;" /></p>
+
+<p>Your source publication needs a license. In the US, if no license is specified, users have no legal right to download, modify, or distribute. Furthermore, people can’t contribute to your code unless you tell them what rules to play by. Choosing a license is complicated, so here are some pointers:</p>
+
+<p>Open source. There are plenty of <a href="http://opensource.org/licenses/alphabetical">open source licenses</a> available to choose from.</p>
+
+<p>In general, these licenses tend to fall into one of two categories:</p>
+
+<ol>
+  <li>
+    <p>licenses that focus more on the user’s freedom to do with the software as they please (these are the more permissive open source licenses such as the MIT, BSD, and Apache)</p>
+  </li>
+  <li>
+    <p>licenses that focus more on making sure that the code itself — including any changes made to it and distributed along with it — always remains free (these are the less permissive free software licenses such as the GPL and LGPL)</p>
+  </li>
+</ol>
+
+<p>The latter are less permissive in the sense that they don’t permit someone to add code to the software and distribute it without also including the source code for their changes.</p>
+
+<p>To help you choose one for your project, there’s a license chooser; use it.</p>
+
+<h4 id="more-permissive">More Permissive</h4>
+
+<ul>
+  <li>PSFL (Python Software Foundation License) – for contributing to Python itself</li>
+  <li>MIT / BSD / ISC
+    <ul>
+      <li>MIT (X11)</li>
+      <li>New BSD</li>
+      <li>ISC</li>
+    </ul>
+  </li>
+  <li>Apache</li>
+</ul>
+
+<h4 id="less-permissive">Less Permissive</h4>
+
+<ul>
+  <li>LGPL</li>
+  <li>GPL
+    <ul>
+      <li>GPLv2</li>
+      <li>GPLv3</li>
+    </ul>
+  </li>
+</ul>
+
+<p>A good overview of licenses with explanations of what one can, cannot, and must do using a particular software can be found at <a href="https://tldrlegal.com/">tl;drLegal</a>.</p>
+
+<p>Choosing a license is one of the most important tasks as it defines how your software will be used, how it will be cited, how it will be redistributed.</p>
+
+<p>I hope I explained most of the things very well, if you still have doubts, write a mail to me on <a href="mailto:hello@shreyasb.com">hello@shreyasb.com</a>. I will be glad to have a discussion with you. Hope to see more and more Python Packages from the community. Remember, don’t think that your code is very basic and does not contribute anything to society. Every bit counts, every second you invest in making a code that does a small task counts. No code is useless.</p>
+
+<p>Happy Coding!</p>
+
+<p><strong>Note: If you think there’s anything wrong in this article or something that can be improved in any way, feel free to point out in the comments.</strong></p>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Writing+Production+Grade+Code+and+Distributing+it%20https%3A%2F%2Fwww.devbae.tech%2Fprod-grade-code%2F"
+    class="btn btn-twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Twitter"><i
+      class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2Fprod-grade-code%2F"
+    class="btn btn-facebook"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Facebook"><i
+      class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.devbae.tech%2Fprod-grade-code%2F"
+    class="btn btn-linkedin"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on LinkedIn"><i
+      class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left"
+              href="/Building-Python-Packages-and-Deploying-on-PyPi/" data-toggle="tooltip"
+              data-placement="top" title="Building Python Packages and Deploying on PyPI">&larr; Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right"
+              href="/introduction-to-graphql/" data-toggle="tooltip"
+              data-placement="top" title="Introduction to GraphQL">Next<span class="d-none d-md-inline">
+                Post</span> &rarr;</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" SameSite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>

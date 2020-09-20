@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Web Scraping - The Python Way! - DevBae</title>
+<meta name="description" content="Pre-requisites:">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Web Scraping - The Python Way!">
+<meta property="og:url" content="https://www.devbae.tech/web-scraping/">
+
+
+<meta property="og:description" content="Pre-requisites:">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-05-09T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/web-scraping/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Web Scraping - The Python Way! - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="Pre-requisites:">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/web-scraping/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://source.unsplash.com/Qbs6liSxjr8/1200x800')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Web Scraping - The Python Way!</h1>
+            
+              <h2 class="subheading">How about turning the whole internet into your database?</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  
+                    <a target="_blank" href="https://github.com/aashish-ak">Aashish Kumar</a>,
+                  
+                
+                  
+                    <a target="_blank" href="https://github.com/aroralakshya">Lakshya Arora</a>
+                  
+                
+              
+              on May 09, 2020 · <span class="reading-time" title="Estimated read time">
+  
+   26 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+          
+
+          <!-- For multiple authors -->
+          <div class="sidebar-author-details">
+
+            
+            
+
+            <!-- Check if the user exists in frequent authors (authors.yml) -->
+            
+
+              
+                <!-- Image URL -->
+                <div class="author__avatar">
+                  <img src="https://avatars2.githubusercontent.com/u/21988675?s=400&amp;v=4" alt="Aashish Kumar" itemprop="image">
+                </div>
+              
+
+              <!-- Author Name -->
+              <div class="author__content">
+                <h3 class="author__name" itemprop="name">Aashish Kumar</h3>
+                
+                
+                  <div class="author__bio" itemprop="description">
+                    <p>Core Team Member, Programming Club, IIT Mandi</p>
+                  </div>
+                
+              </div>
+
+              <!-- Author Links -->
+              <div class="author__urls-wrapper">
+                <button class="btn btn--inverse btn-show-urls">Follow</button>
+                <ul class="author__urls social-icons">
+
+                  <!-- Loop and add the respective links here -->
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="mailto:kumaraashish118@gmail.com" rel="nofollow noopener noreferrer">
+                        <i class="fas fa-envelope-square"></i>
+                        <span class="label">Email</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://github.com/aashish-ak" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                        <span class="label">GitHub</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://www.linkedin.com/in/aashish-ak" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="label">Linkedin</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://instagram.com/main.whi.hoon" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                        <span class="label">Instagram</span>
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div> <!-- End of author links-->
+
+            
+
+          </div> <!-- End of sidebar-author-details for multiple authors -->
+        <hr>
+
+        <!-- End of for used for multiple authors -->
+        
+
+          <!-- For multiple authors -->
+          <div class="sidebar-author-details">
+
+            
+            
+
+            <!-- Check if the user exists in frequent authors (authors.yml) -->
+            
+
+              
+                <!-- Image URL -->
+                <div class="author__avatar">
+                  <img src="https://avatars2.githubusercontent.com/u/20344314" alt="Lakshya Arora" itemprop="image">
+                </div>
+              
+
+              <!-- Author Name -->
+              <div class="author__content">
+                <h3 class="author__name" itemprop="name">Lakshya Arora</h3>
+                
+                
+                  <div class="author__bio" itemprop="description">
+                    <p>Member, DevBae</p>
+                  </div>
+                
+              </div>
+
+              <!-- Author Links -->
+              <div class="author__urls-wrapper">
+                <button class="btn btn--inverse btn-show-urls">Follow</button>
+                <ul class="author__urls social-icons">
+
+                  <!-- Loop and add the respective links here -->
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="mailto:arora.lakshya123@gmail.com" rel="nofollow noopener noreferrer">
+                        <i class="fas fa-envelope-square"></i>
+                        <span class="label">Email</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://github.com/aroralakshya" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-fw fa-github"></i>
+                        <span class="label">GitHub</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://www.linkedin.com/in/lakshya-arora-8122b2137/" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="label">Linkedin</span>
+                      </a>
+                    </li>
+                  
+                    <!-- Social Link -->
+                    <li>
+                      <a target="_blank" href="https://instagram.com/lakshya_arora__" rel="nofollow noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                        <span class="label">Instagram</span>
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div> <!-- End of author links-->
+
+            
+
+          </div> <!-- End of sidebar-author-details for multiple authors -->
+        <hr>
+
+        <!-- End of for used for multiple authors -->
+        
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li>
+<a href="#wtf-web-scraping"> WTF is Web Scraping? </a>
+    <ul>
+      <li><a href="#responsible-web-scraping">Responsible Web Scraping</a></li>
+    </ul>
+  </li>
+  <li><a href="#scraping-crawling"> Web Crawling vs. Web Scraping </a></li>
+  <li>
+<a href="#scraping-python"> Scraping - The Python Way! </a>
+    <ul>
+      <li><a href="#part-1-inspect-the-webpage">Part 1: Inspect the WebPage</a></li>
+      <li><a href="#part-2-use-beautifulsoup-to-scrape-these-elements--">Part 2: Use beautifulsoup to scrape these elements -</a></li>
+    </ul>
+  </li>
+  <li><a href="#applications"> Some Interesting Applications </a></li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>Pre-requisites:</p>
+
+<ul>
+  <li>HTML (knowledge of HTML tags, attributes, properties)</li>
+  <li>Developer Tools(Chrome, Firefox, Safari - all have this feature)</li>
+  <li>Basic Python (use of loops, arrays, and basic data structures)</li>
+</ul>
+
+<p>Yes, you read the title right, this is not a clickbait article, we’re really talking about turning the whole internet into your database. But before we do that, let’s get a little insight into what web scraping is, and why everyone should have this superpower of becoming a scraper spiderman (You’ll know why we’re calling that soon).</p>
+
+<p><strong>Let’s Start Scraping!</strong></p>
+
+<p>We’ll be learning the following topics today:</p>
+
+<ol>
+  <li><strong><a href="#wtf-web-scraping">WTF is Web Scraping?</a></strong></li>
+  <li><strong><a href="#scraping-crawling">Web Crawling vs. Web Scraping</a></strong></li>
+  <li><strong><a href="#scraping-python">Scraping - The Python Way!</a></strong></li>
+  <li><strong><a href="#applications">Some Interesting Applications</a></strong></li>
+</ol>
+
+<h2 id="wtf-web-scraping"> WTF is Web Scraping? </h2>
+
+<p>They say “Data is the fuel” for coming inventions in computer science, people are creating crazy services using data itself.
+Sometimes it happens while building an application, that we want important data to display on your app, but the problem is <code class="highlighter-rouge">WHERE?</code> and <code class="highlighter-rouge">HOW?</code>, that we don’t know where to look for the data and even if we do, we don’t know how to extract it. Surely many websites have made their structured datasets available for public use like <a href="https://www.imdb.com/interfaces/">IMDB</a>, but not everyone is so kind. So without the required data, it’ll be impossible for you to give life to your awesome ideas.</p>
+
+<p>Don’t worry, hold your emotions right there, we’ve got a solution to your <code class="highlighter-rouge">HOW?</code> problem i.e how to extract the data from known websites, for your app, you’ll get the answer to the former one, in a minute. The kind of apps that we’re talking about here are e-commerce websites like Amazon etc. who use a lot of data that can be used in many innovative ways to develop apps.</p>
+
+<p><img src="https://hirinfotech.com/wp-content/uploads/2019/10/What-is-Web-Scraping.png" alt="image alt &gt;&lt;"></p>
+
+<p>So in simple words, web-scraping is the technique to scrape or extract the data from the webpages of the websites into a structured or usable form. The way web-scraping works is, we download the entire HTML pages of the websites after opening them and parse the desired useful information from the HTML page that we get, into structured data like tables and arrays.</p>
+
+<h3 id="responsible-web-scraping">Responsible Web Scraping</h3>
+
+<p>Uncle Ben once said to Scraper-Spiderman (The Web Scraper):</p>
+
+<blockquote>
+  <p><strong>With great power, Comes great responsibility.</strong></p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/81482456-ce0ba800-9254-11ea-9b0f-3c728e5c234d.png" alt="image alt &gt;&lt;"></p>
+
+<p>Before giving you the superpower of scraping-spiderman, we want to tell you that you cannot scrape every website, most sites allow scraping of their content but some don’t, like Facebook, Google, etc. They don’t allow you to go through their content using just a python script, you have to take special permissions for that. Doing otherwise is completely illegal (You don’t wanna go to jail, do you? <img class="emoji" title=":oncoming_police_car:" alt=":oncoming_police_car:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f694.png" height="20" width="20">).</p>
+
+<p>So how will you know which sites allow you to scrape their content and which ones don’t? Well, the answer is simple, <code class="highlighter-rouge">robots.txt</code>. This is a file that is available for every website. For any website in general, just open <code class="highlighter-rouge">www.example.com/robots.txt</code>. We’ll go through facebook’s robots.txt file. Open <a href="https://facebook.com/robots.txt">https://facebook.com/robots.txt</a> :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Notice: Collection of data on Facebook through automated means is
+# prohibited unless you have express written permission from Facebook
+# and may only be conducted for the limited purpose contained in said
+# permission.
+# See: http://www.facebook.com/apps/site_scraping_tos_terms.php
+</span>
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="n">Applebot</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">album</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">checkpoint</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">contact_importer</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">dialog</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">fbml</span><span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">dialog</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">feeds</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">file_download</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">hashtag</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">l</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">moments_app</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">p</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">photo</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">photos</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">share</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">share</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">sharer</span><span class="p">.</span><span class="n">php</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">sharer</span><span class="o">/</span>
+
+<span class="p">.................</span>
+
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="n">Applebot</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">bootloader</span><span class="o">-</span><span class="n">endpoint</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">pagelet</span><span class="o">/</span><span class="n">generic</span><span class="p">.</span><span class="n">php</span><span class="o">/</span><span class="n">PagePostsSectionPagelet</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">safetycheck</span><span class="o">/</span>
+
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="n">Bingbot</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">bootloader</span><span class="o">-</span><span class="n">endpoint</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">pagelet</span><span class="o">/</span><span class="n">generic</span><span class="p">.</span><span class="n">php</span><span class="o">/</span><span class="n">PagePostsSectionPagelet</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">safetycheck</span><span class="o">/</span>
+
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="n">Googlebot</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">bootloader</span><span class="o">-</span><span class="n">endpoint</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">pagelet</span><span class="o">/</span><span class="n">generic</span><span class="p">.</span><span class="n">php</span><span class="o">/</span><span class="n">PagePostsSectionPagelet</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">safetycheck</span><span class="o">/</span>
+
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="n">Twitterbot</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">bootloader</span><span class="o">-</span><span class="n">endpoint</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">pagelet</span><span class="o">/</span><span class="n">generic</span><span class="p">.</span><span class="n">php</span><span class="o">/</span><span class="n">PagePostsSectionPagelet</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span><span class="n">safetycheck</span><span class="o">/</span>
+
+<span class="n">User</span><span class="o">-</span><span class="n">agent</span><span class="p">:</span> <span class="o">*</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span>
+</code></pre></div></div>
+
+<p>So “disallow: something” means that these links are not allowed to be scraped by any bot or script. The ones allowed are crawling bots of Google, Bing, Apple, etc. because they got special permissions from facebook. So we urge you to use this super-power responsibly and build great products.</p>
+
+<h2 id="scraping-crawling"> Web Crawling vs. Web Scraping </h2>
+
+<p><img src="https://limeproxies.com/blog/wp-content/uploads/2019/07/LP-720x360.jpg" alt="image alt &gt;&lt;"></p>
+
+<p>There is a similar term called <code class="highlighter-rouge">web crawling</code> that you’ll find on the internet when you do some research on <code class="highlighter-rouge">web scraping</code>. Search engines like Google, Bing, etc. has web crawlers that extract data of the websites and saves it in its index.</p>
+
+<p>The key difference between a web crawler and web scraper is that web crawler also often called <code class="highlighter-rouge">spider</code> is a standalone bot which goes through the metadata and internal links of the websites and collects it dynamically, the term <code class="highlighter-rouge">crawling</code> in itself means searching without having any definite direction endlessly and gathering as much data as possible. While web scraper is a script that runs and collects the entire webpages given their URLs and then is designed to extract specific data from those webpages.</p>
+
+<p>Web crawlers provide you metadata by searching through keywords and links but doesn’t give you the internal data of the webpages, so that’s the answer to your main question of where to look for your data, web crawlers are designed to look for the data and links using some keywords and references (the answer to <code class="highlighter-rouge">WHERE?</code>) and then web scraping is used to extract the desired data from those links(the answer to <code class="highlighter-rouge">HOW?</code>). Today we’ll be learning how to build web scraping scripts, and we’ll leave building crawlers for some other day as its a more complex topic.</p>
+
+<h2 id="scraping-python"> Scraping - The Python Way! </h2>
+
+<p>Phew! Enough of the Gyaan, It’s time to put out your coding weapons (python in this case). In this tutorial, we’ll be scraping the details of the faculties of different departments of a few IITs. But before we start, make sure you have <code class="highlighter-rouge">python3</code> installed on your laptop. We’ll be using the <code class="highlighter-rouge">request</code> library to make get requests and <code class="highlighter-rouge">BeautifulSoup</code> python library for scraping the pages. Let’s install it first using pip. Windows and Mac/OSX users can install it using <a href="https://subscription.packtpub.com/book/web_development/9781783289554/1/ch01lvl1sec08/installing-beautiful-soup">this</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">requests</span>
+<span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</code></pre></div></div>
+
+<p>After installing the library let’s start writing the scraper script. So first in the list is <a href="https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html">IITR CSE department</a>. If we open the <a href="https://www.iitr.ac.in/robots.txt">robots.txt</a> file of IITR’s website, then we see this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="o">*</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">In_Pursuit_of_Non_Violence</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">AH</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">BT</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">CH</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">DM</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">ECE</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">EQ</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">HS</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">MA</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">MI</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">NT</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">WRT</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">AR</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">CE</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">CY</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">DPT</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">EE</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">ES</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">HY</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">ME</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">departments</span><span class="o">/</span><span class="n">MT</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">academics</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">administration</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">admissions</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">research</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">institute</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">Placements</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">ISEA</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">campus_life</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">File</span><span class="o">/</span>
+<span class="n">Disallow</span><span class="p">:</span> <span class="o">/</span><span class="n">PageUploads</span><span class="o">/</span><span class="n">files</span><span class="o">/</span>
+</code></pre></div></div>
+
+<p>So except these links, we can scrape any page from IITR’s website. The page we are scraping is <a href="https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html">this</a>, which has <code class="highlighter-rouge">/departments/CSE/</code> hyperlink, which is allowed. So let’s scrape it.</p>
+
+<h3 id="part-1-inspect-the-webpage">Part 1: Inspect the WebPage</h3>
+
+<p>Developer Tools - Developer Tools (DevTools) help developers to create, test, and debug software. Most web browsers(Chrome, Firefox, Safari) have these tools.
+DevTools in browsers can be used to -</p>
+
+<ol>
+  <li>Change a webpage on the fly.</li>
+  <li>Find, reproduce and debug javascript errors</li>
+  <li>Check Network activity</li>
+  <li>View and Change a Page’s Styles (CSS)</li>
+  <li>Check use of WebStorage</li>
+  <li>Using Responsive Design Mode, we can see how our page will look like on different screens.</li>
+</ol>
+
+<p>Checkout the DevTools Documentations <a href="https://developer.mozilla.org/en-US/docs/Tools">here</a>(Firefox) and <a href="https://developers.google.com/web/tools/chrome-devtools">here</a>(Chrome)</p>
+
+<p>Let’s use DevTools to study the document we want to scrape.</p>
+
+<ol>
+  <li>
+    <p>This is how the page looks when we open the DevTools(Check the documentation links above if you don’t know how to open or use dev tools).</p>
+
+    <p><img src="https://user-images.githubusercontent.com/21988675/81588965-ac3a2e80-93d6-11ea-9306-be8371bfed18.png" alt="image alt &gt;&lt;"></p>
+  </li>
+  <li>
+    <p>We want to scrape the list of faculties:</p>
+    <ul>
+      <li>We first need to find this list in the Document.</li>
+      <li>Use “pick an element from the page tool” (using <code class="highlighter-rouge">ctrl+shift+c</code> or mouse pointer icon in the top left of the dev tools panel).</li>
+      <li>Find out which element contains the list by hovering over the list.</li>
+      <li>You’ll find out that the element <code class="highlighter-rouge">body -&gt; div.main -&gt; div.content -&gt; div.content -&gt; div.list</code> contains the list.</li>
+      <li>All the list elements are div with class list-wrapper.</li>
+    </ul>
+
+    <p><img src="https://user-images.githubusercontent.com/20344314/81575424-a50a2500-93c4-11ea-9c48-c222cecee2cc.PNG" alt="image alt &gt;&lt;"></p>
+  </li>
+</ol>
+
+<h3 id="part-2-use-beautifulsoup-to-scrape-these-elements--">Part 2: Use beautifulsoup to scrape these elements -</h3>
+
+<ol>
+  <li>
+    <p>We need to get the HTML document, for which we’ll use the <code class="highlighter-rouge">requests</code> library.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">requests</span>
+ <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+ <span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html'</span>
+ <span class="n">pageResponse</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>It sends a get request to the server. The response is the HTML document if there is no error.</p>
+  </li>
+  <li>
+    <p>We need to parse the HTML and find the faculty list from the whole document.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">requests</span>
+ <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+ <span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html'</span>
+ <span class="n">pageResponse</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+ <span class="n">bsParser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">pageResponse</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Here, we have passed the page content(HTML code) to beautifulsoup and the type of parser(HTML parser).</p>
+  </li>
+  <li>
+    <p>You can print the parsed HTML code by using the <code class="highlighter-rouge">prettify</code> function:</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">requests</span>
+ <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+ <span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html'</span>
+ <span class="n">pageResponse</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+ <span class="n">bsParser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">pageResponse</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+
+ <span class="k">print</span><span class="p">(</span><span class="n">bsParser</span><span class="p">.</span><span class="n">prettify</span><span class="p">())</span>
+</code></pre></div>    </div>
+
+    <p>This will print the entire parsed HTML code of the page, like this:</p>
+
+    <pre><code class="language-HTML">   &lt;!DOCTYPE html&gt;
+   &lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+   &lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+   &lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+   &lt;!--[if gt IE 8]&gt;&lt;!--&gt;
+   &lt;html class="no-js"&gt;
+   &lt;!--&lt;![endif]--&gt;
+   &lt;html lang="en"&gt;
+     &lt;head&gt;
+     &lt;meta charset="utf-8"/&gt;
+     &lt;title&gt;
+       Department of Computer Science and Engineering,Indian Institue of Technology Roorkee
+     &lt;/title&gt;
+       .......................
+   &lt;!--Google Analytics code ends--&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>We’ll be using beautiful soup functions <code class="highlighter-rouge">find</code>, <code class="highlighter-rouge">find_all</code>, and <code class="highlighter-rouge">find_children</code>. Read the documentation of beautiful soup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">here</a></p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">requests</span>
+ <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+ <span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html'</span>
+ <span class="n">pageResponse</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+ <span class="n">bsParser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">pageResponse</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+
+ <span class="n">listElements</span> <span class="o">=</span> <span class="n">bsParser</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'list-wrapper'</span><span class="p">)</span> <span class="c1">#returns all div elements with class list-wrapper
+</span></code></pre></div>    </div>
+
+    <p><code class="highlighter-rouge">listElements</code> contains the list of all faculties</p>
+  </li>
+  <li>
+    <p>Let’s deconstruct the list wrapper element using dev tools.</p>
+
+    <p><img src="https://user-images.githubusercontent.com/20344314/81575432-a6d3e880-93c4-11ea-9184-f5bee0e36f49.PNG" alt="image alt &gt;&lt;"></p>
+
+    <p>Every list element has an image element <code class="highlighter-rouge">img.dp</code> and a <code class="highlighter-rouge">div.detail</code> with all the information about the faculty.</p>
+
+    <p>We’ll extract the source of the image directly and find the details using <code class="highlighter-rouge">findChildren</code> attribute. It returns an array of children of an element.
+ While enumerating over the children list, we first check if the element is null.</p>
+
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="n">facultyArray</span> <span class="o">=</span> <span class="p">[]</span>
+ <span class="k">for</span> <span class="n">faculty</span> <span class="ow">in</span> <span class="n">listElements</span><span class="p">:</span>
+     <span class="n">facultyImage</span> <span class="o">=</span> <span class="n">faculty</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'dp'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'src'</span><span class="p">)</span>
+
+     <span class="c1"># returns the list of all children elements of div with class `detail`
+</span>     <span class="n">facultyDetails</span> <span class="o">=</span> <span class="n">faculty</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'detail'</span><span class="p">).</span><span class="n">findChildren</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+     <span class="c1"># in the first child, find the first anchor element and get the text
+</span>     <span class="n">facultyName</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+     <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyName</span><span class="p">:</span>
+         <span class="n">facultyName</span> <span class="o">=</span> <span class="s">""</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="n">facultyName</span> <span class="o">=</span> <span class="n">facultyName</span><span class="p">.</span><span class="n">text</span>
+
+     <span class="c1"># in the first child, find the first anchor element and get the href
+</span>     <span class="n">facultyLink</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'a'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'href'</span><span class="p">)</span>
+
+     <span class="c1"># second child is the div with position of the faculty
+</span>     <span class="n">facultyPos</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+     <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyPos</span><span class="p">:</span>
+         <span class="n">facultyPos</span> <span class="o">=</span> <span class="s">""</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="n">facultyPos</span> <span class="o">=</span> <span class="n">facultyPos</span><span class="p">.</span><span class="n">text</span>
+
+     <span class="c1"># third child is the interest of the faculty, find the p element
+</span>
+     <span class="n">facultyInterest</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'p'</span><span class="p">)</span>
+     <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyInterest</span><span class="p">:</span>
+         <span class="n">facultyInterest</span> <span class="o">=</span> <span class="s">""</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="n">facultyInterest</span> <span class="o">=</span> <span class="n">facultyInterest</span><span class="p">.</span><span class="n">text</span>
+
+     <span class="c1"># fourth and fifth elements are span with contact information, simply get the text
+</span>     <span class="n">facultyEmail</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">text</span> 
+     <span class="n">facultyContact</span> <span class="o">=</span> <span class="n">facult</span> <span class="n">yDetails</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">text</span>
+
+     <span class="n">facultyInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Name"</span> <span class="p">:</span> <span class="n">facultyName</span><span class="p">,</span> <span class="s">"Image"</span><span class="p">:</span><span class="n">facultyImage</span><span class="p">,</span> <span class="s">"Link"</span> <span class="p">:</span> <span class="n">facultyLink</span><span class="p">,</span> <span class="s">"Pos"</span> <span class="p">:</span> <span class="n">facultyPos</span><span class="p">,</span> <span class="s">"Interest"</span> <span class="p">:</span> <span class="n">facultyInterest</span><span class="p">,</span> <span class="s">"Email"</span> <span class="p">:</span> <span class="n">facultyEmail</span><span class="p">,</span> <span class="s">"Contact"</span> <span class="p">:</span> <span class="n">facultyContact</span><span class="p">}</span>
+     <span class="n">facultyArray</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">facultyInfo</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>We finally have the list of all the faculties in <code class="highlighter-rouge">facultyArray</code>, it can be used to store in a CSV file or a database. You can print the array to check if the data is not null. Following is our final script:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.iitr.ac.in/departments/CSE/pages/People+Faculty_List.html'</span>
+<span class="n">pageResponse</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+<span class="n">bsParser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">pageResponse</span><span class="p">.</span><span class="n">content</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span>
+
+<span class="c1"># print(bsParser.prettify())
+</span>
+<span class="n">listElements</span> <span class="o">=</span> <span class="n">bsParser</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'list-wrapper'</span><span class="p">)</span>
+
+<span class="n">facultyArray</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">faculty</span> <span class="ow">in</span> <span class="n">listElements</span><span class="p">:</span>
+    <span class="n">facultyImage</span> <span class="o">=</span> <span class="n">faculty</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'img'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'dp'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'src'</span><span class="p">)</span>
+
+    <span class="c1"># returns the list of all children elements of
+</span>    <span class="n">facultyDetails</span> <span class="o">=</span> <span class="n">faculty</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'div'</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">'detail'</span><span class="p">).</span><span class="n">findChildren</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="c1"># in the first child, find the first anchor element and get the text
+</span>    <span class="n">facultyName</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyName</span><span class="p">:</span>
+        <span class="n">facultyName</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">facultyName</span> <span class="o">=</span> <span class="n">facultyName</span><span class="p">.</span><span class="n">text</span>
+
+    <span class="c1"># in the first child, find the first anchor element and get the href
+</span>    <span class="n">facultyLink</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'a'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'href'</span><span class="p">)</span>
+
+     <span class="c1"># second child is the div with position of the faculty
+</span>    <span class="n">facultyPos</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyPos</span><span class="p">:</span>
+        <span class="n">facultyPos</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">facultyPos</span> <span class="o">=</span> <span class="n">facultyPos</span><span class="p">.</span><span class="n">text</span>
+
+    <span class="c1"># third child is the interest of the faculty, find the p element
+</span>
+    <span class="n">facultyInterest</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">'p'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">facultyInterest</span><span class="p">:</span>
+        <span class="n">facultyInterest</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">facultyInterest</span> <span class="o">=</span> <span class="n">facultyInterest</span><span class="p">.</span><span class="n">text</span>
+
+    <span class="c1"># fourth and fifth elements are span with contact information, simply get the text
+</span>    <span class="n">facultyEmail</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">text</span> 
+    <span class="n">facultyContact</span> <span class="o">=</span> <span class="n">facultyDetails</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">text</span>
+
+    <span class="n">facultyInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Name"</span> <span class="p">:</span> <span class="n">facultyName</span><span class="p">,</span> <span class="s">"Image"</span><span class="p">:</span><span class="n">facultyImage</span><span class="p">,</span> <span class="s">"Link"</span> <span class="p">:</span> <span class="n">facultyLink</span><span class="p">,</span> <span class="s">"Pos"</span> <span class="p">:</span> <span class="n">facultyPos</span><span class="p">,</span> <span class="s">"Interest"</span> <span class="p">:</span> <span class="n">facultyInterest</span><span class="p">,</span> <span class="s">"Email"</span> <span class="p">:</span> <span class="n">facultyEmail</span><span class="p">,</span> <span class="s">"Contact"</span> <span class="p">:</span> <span class="n">facultyContact</span><span class="p">}</span>
+    <span class="n">facultyArray</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">facultyInfo</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">facultyArray</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Hurray! You’re now the spider-scraper we were talking about. Using this superpower do good and give life to your innovative ideas <img class="emoji" title=":fire:" alt=":fire:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png" height="20" width="20">. About ideas, before we go, let’s discuss what are the different things that you can build using this technique.</p>
+
+<h2 id="applications"> Some Interesting Applications </h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/aashish-ak/search_guru">Search_Guru</a> is a web-app built using angular, is scrapes the data of all the faculties from websites of different IITs and displays it at one place so that it gets easier for students to look for faculties with similar interests so that they can approach them for internships and projects, etc. It uses <a href="https://cheerio.js.org/">cheerio.js</a> javascript library to do the scraping. Search_Guru is built by <a href="https://github.com/aashish-ak">Aashish</a>, <a href="https://github.com/vishal1541">Vishal</a>, <a href="https://github.com/amanjain25">Aman</a>, and <a href="https://github.com/yashagrawal0">Yash</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://flairboat.com/#/">Flairboat</a> uses a similar concept of scraping job information from different job websites and then filtering them using their custom-built AI, to suggest the best candidates to the companies and vice versa.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/vsvipul/RecipeBot">RecipeBot</a> built by <a href="https://github.com/abhigyank">Abhigyan</a>, <a href="https://github.com/vsvipul">Vipul</a> and <a href="https://github.com/lasers67">Pratyush</a>, is a great chatbot that scrapes recipes from different cooking websites based on the given ingredients.</p>
+  </li>
+</ul>
+
+<p>There are many more creative ways in which you can use this technique to build something different and awesome. We can’t wait to see what magic you create with this. Do let us know if you build some great project, we’ll feature it here <img class="emoji" title=":heart:" alt=":heart:" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" height="20" width="20">.</p>
+
+<p>See you next time!</p>
+
+<p><strong>Note: If you think there’s anything wrong in this article or something that can be improved in any way, do let us know in the comments.</strong></p>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Web+Scraping+-+The+Python+Way%21%20https%3A%2F%2Fwww.devbae.tech%2Fweb-scraping%2F" class="btn btn-twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2Fweb-scraping%2F" class="btn btn-facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.devbae.tech%2Fweb-scraping%2F" class="btn btn-linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a>
+</noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left" href="/Build-TF-1.14-GPU-Ubuntu-16/" data-toggle="tooltip" data-placement="top" title="Building Tensorflow 1.14 GPU">← Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right" href="/Introduction-to-AI/" data-toggle="tooltip" data-placement="top" title="Artificial Intelligence - Part 1">Next<span class="d-none d-md-inline">
+                Post</span> →</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright © DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" samesite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>

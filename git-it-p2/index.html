@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- begin _includes/seo.html --><title>Git it! - Simplified Git Tutorial (Part 2). - DevBae</title>
+<meta name="description" content="If there is a tool or software that every software developer must know, it is GIT. Everyone will agree that we all struggle with it initially when we start learning it. So I’m here to ease the burden from the shoulders of the beginners, who are just starting with this amazing tool.">
+
+
+<meta name="author" content="Aashish Kumar">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="DevBae">
+<meta property="og:title"
+  content="Git it! - Simplified Git Tutorial (Part 2).">
+<meta property="og:url" content="https://www.devbae.tech/git-it-p2/">
+
+
+<meta property="og:description" content="If there is a tool or software that every software developer must know, it is GIT. Everyone will agree that we all struggle with it initially when we start learning it. So I’m here to ease the burden from the shoulders of the beginners, who are just starting with this amazing tool.">
+
+
+
+
+
+
+
+<meta property="article:published_time" content="2020-05-06T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.devbae.tech/git-it-p2/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+  
+  <title>
+    Git it! - Simplified Git Tutorial (Part 2). - DevBae
+    
+  </title>
+
+  <!-- Add favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico">
+
+  <meta name="description" content="If there is a tool or software that every software developer must know, it is GIT. Everyone will agree that we all struggle with it initially when we start l...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.devbae.tech/git-it-p2/">
+  <link rel="alternate" type="application/rss+xml" title="DevBae" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">DevBae</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead" style="background-image: url('https://source.unsplash.com/MSN8TFhJ0is/800x800')">
+   
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Git it! - Simplified Git Tutorial (Part 2).</h1>
+            
+              <h2 class="subheading">It's Commit'o'Clock! WTF is Github?</h2>
+            
+
+            
+
+            <span class="meta">Posted by
+              
+                
+                  <a target="_blank" href="https://github.com/aashish-ak">Aashish Kumar</a>
+                
+              
+              on May 06, 2020 &middot; <span class="reading-time" title="Estimated read time">
+  
+   14 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Get the Details for sidebar -->
+    
+      
+      
+      <!-- Add the side bar -->
+      <div id="sidebar">
+
+        <!-- Loop for the authors -->
+        
+
+        <!-- For single author -->
+        <div class="sidebar-author-details">
+        
+          
+
+          <!-- Check if the user exists in frequent authors (authors.yml) -->
+          
+
+            
+              <!-- Image URL -->
+              <div class="author__avatar">
+                <img src="https://avatars2.githubusercontent.com/u/21988675?s=400&v=4"
+                  alt="Aashish Kumar" itemprop="image">
+              </div>
+            
+
+            <!-- Devbae Name -->
+            <div class="author__content">
+              <h3 class="author__name" itemprop="name">Aashish Kumar</h3>
+              
+              
+                <div class="author__bio" itemprop="description">
+                  <p>Core Team Member, Programming Club, IIT Mandi</p>
+                </div>
+              
+            </div>
+
+            <!-- Author Links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse btn-show-urls">Follow</button>
+              <ul class="author__urls social-icons">
+
+                <!-- Loop and add the respective links here -->
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="mailto:kumaraashish118@gmail.com" rel="nofollow noopener noreferrer">
+                      <i class="fas fa-envelope-square"></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://github.com/aashish-ak" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-github"></i>
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/aashish-ak" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-linkedin"></i>
+                      <span class="label">Linkedin</span>
+                    </a>
+                  </li>
+                
+                  <!-- Social Link -->
+                  <li>
+                    <a target="_blank" href="https://instagram.com/main.whi.hoon" rel="nofollow noopener noreferrer">
+                      <i class="fab fa-instagram"></i>
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </div> <!-- End of author links-->
+                
+          
+        </div> <!-- End of sidebar-author-details for multiple authors -->
+
+        <!-- End of if which checks if the site authors are present or not -->
+      
+    </div> <!-- End of sidebar -->
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 mx-auto">
+
+        <!-- For the TOC -->
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+                <i class="fa fa-file-alt fa-w-12"></i> 
+                
+                  On this Page
+                
+              </h4></header>
+
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              
+                <!-- Default h range used -->
+                
+<ul class="toc__menu">
+  <li><a href="#how-to-commit"> How to commit! </a></li>
+  <li><a href="#git-github"> Git + Github = fire_emoji :p </a>
+    <ul>
+      <li><a href="#creating-a-repository-on-github">Creating a repository on Github</a></li>
+      <li><a href="#pushing-local-git-repo-to-github">Pushing local Git repo to Github</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+              
+              
+            </nav>
+          </aside>
+        
+
+
+        <p>If there is a tool or software that every software developer must know, it is <em>GIT</em>. Everyone will agree that we all struggle with it initially when we start learning it. So I’m here to ease the burden from the shoulders of the beginners, who are just starting with this amazing tool.</p>
+
+<p><strong>Let’s Git it!</strong></p>
+
+<p>We’ll be learning the following topics today:-</p>
+
+<ol>
+  <li><strong><a href="/git-it-p1/#understanding-git"><del>Understanding Git (How it Works?)</del></a></strong></li>
+  <li><strong><a href="/git-it-p1/#install-setup"><del>Installation and Setup</del></a></strong></li>
+  <li><strong><a href="#how-to-commit">How to Commit!</a></strong></li>
+  <li><strong><a href="#git-github">Git + Github</a></strong></li>
+  <li><strong><a href="/git-it-p3/#branching-merging"><del>Branching and Merging</del></a></strong></li>
+  <li><strong><a href="/git-it-p3/#rebasing"><del>Rebasing</del></a></strong></li>
+  <li><strong><a href="/git-it-p3/#squashing"><del>Squashing</del></a></strong></li>
+</ol>
+
+<p><strong>Note :- First two topics are included in <a href="/git-it-p1/">part 1</a>. This is the part 2 and contains the next two topics, for later topics, head to <a href="/git-it-p3/">part 3</a>.</strong></p>
+
+<h2 id="how-to-commit"> How to commit! </h2>
+
+<p>Now we’ll be assuming that you’ve successfully installed git and have it up and running. So as you’ve set up an empty git repository in the folder, and if you haven’t, just run the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">init</span>
+</code></pre></div></div>
+
+<p>This will initialize an empty git repository and a <code class="highlighter-rouge">.git</code> folder will be created. Now as we’ve initialized a repo, you need to add the files that need to be tracked by git. For reference we’ve created some temporary files, following is the file structure:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">├──</span> <span class="n">file1</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">├──</span> <span class="n">file2</span><span class="p">.</span><span class="n">txt</span>
+<span class="err">├──</span> <span class="p">.</span><span class="n">git</span>
+<span class="err">└──</span> <span class="n">temp_folder</span>
+    <span class="err">└──</span> <span class="n">file3</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div></div>
+
+<p>Each file contains text as “I am fileX.txt”, where X is the file number we’re in.</p>
+
+<p>Now first run the status command to know the status of the git repository.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">status</span>
+</code></pre></div></div>
+
+<p>The output is:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">On</span> <span class="n">branch</span> <span class="n">master</span>
+
+<span class="n">Initial</span> <span class="n">commit</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s">"git add &lt;file&gt;..."</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+
+  <span class="n">file1</span><span class="p">.</span><span class="n">txt</span>
+  <span class="n">file2</span><span class="p">.</span><span class="n">txt</span>
+  <span class="n">temp_folder</span><span class="o">/</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s">"git add"</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The output shows that all the files and folders are untracked and can be added to the repository, also we’re currently on the default <code class="highlighter-rouge">master</code> branch. So to add all the files for tracking, run the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">.</code> means that add all the files/folders in the current directory for tracking, you can specify the name of a specific file or directory which you want to track instead of the <code class="highlighter-rouge">.</code>, but we’re adding all files. Now again run the status command <code class="highlighter-rouge">git status</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">On</span> <span class="n">branch</span> <span class="n">master</span>
+
+<span class="n">Initial</span> <span class="n">commit</span>
+
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s">"git rm --cached &lt;file&gt;..."</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+
+  <span class="n">new</span> <span class="nb">file</span><span class="p">:</span>   <span class="n">file1</span><span class="p">.</span><span class="n">txt</span>
+  <span class="n">new</span> <span class="nb">file</span><span class="p">:</span>   <span class="n">file2</span><span class="p">.</span><span class="n">txt</span>
+  <span class="n">new</span> <span class="nb">file</span><span class="p">:</span>   <span class="n">temp_folder</span><span class="o">/</span><span class="n">file3</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div></div>
+
+<p>Now the output shows that git has tracked all the new files and they have changes that need to be committed. So now you’re ready to make your first commit and save the changes by creating your first checkpoint. Run the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s">"My first commit"</span>
+</code></pre></div></div>
+
+<p>Here <code class="highlighter-rouge">-a</code> flag means to take snapshot of all the changes in the current working directory and <code class="highlighter-rouge">-m</code> flag is used to pass the commit description or message in the command itself. If you don’t use the <code class="highlighter-rouge">-m</code> flag then git will automatically open a text editor, in which you had to write the commit message or description.</p>
+
+<p>The output:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">master</span> <span class="p">(</span><span class="n">root</span><span class="o">-</span><span class="n">commit</span><span class="p">)</span> <span class="mi">2282</span><span class="n">d7f</span><span class="p">]</span> <span class="n">My</span> <span class="n">first</span> <span class="n">commit</span>
+ <span class="mi">3</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">3</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">file1</span><span class="p">.</span><span class="n">txt</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">file2</span><span class="p">.</span><span class="n">txt</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">temp_folder</span><span class="o">/</span><span class="n">file3</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div></div>
+
+<p>Kaboom! Congrats on your first commit. Run the <code class="highlighter-rouge">git status</code> command to check the status.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">On</span> <span class="n">branch</span> <span class="n">master</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">directory</span> <span class="n">clean</span>
+</code></pre></div></div>
+
+<p>It says that now you’ve no changes left to commit and you’ve successfully created your first checkpoint. Now to check the commit log, run the log command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">log</span>
+</code></pre></div></div>
+
+<p>This command lists all the commits that you’ve made till now:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">commit</span> <span class="mi">2282</span><span class="n">d7ff037132a3c390518c82d776d0b86f6a29</span>
+<span class="kt">Author</span><span class="o">:</span> <span class="kt">Aashish</span> <span class="kt">Kumar</span> <span class="o">&lt;</span><span class="n">aashish</span><span class="o">.</span><span class="n">kumar</span><span class="o">@</span><span class="n">devbae</span><span class="o">.</span><span class="n">tech</span><span class="o">&gt;</span>
+<span class="kt">Date</span><span class="o">:</span>   <span class="kt">Wed</span> <span class="kt">May</span> <span class="mi">6</span> <span class="mi">04</span><span class="o">:</span><span class="mi">08</span><span class="o">:</span><span class="mi">05</span> <span class="mi">2020</span> <span class="o">+</span><span class="mi">0530</span>
+
+    <span class="kt">My</span> <span class="n">first</span> <span class="n">commit</span>
+</code></pre></div></div>
+
+<p>The string of random words on the top is called the commit hash, which is like a unique id given to each commit to differentiate between two commits.</p>
+
+<p>Now if you make any changes in any of the tracked files and run the <code class="highlighter-rouge">git status</code> command, you’ll be able to see the changes being actively tracked and when you commit those changes, they’ll be automatically saved.</p>
+
+<p>As you now know how to commit, go make some changes, make commits and play around with committing (I’d suggest at least make 3-4 more commits). Always remember the three steps - make changes in files, add those files for tracking and commit them, also try to give unique commit message every time, describing the changes that you’ve made.</p>
+
+<p>Hopefully, you would’ve created a few commits/checkpoints by now. So to revisit a particular checkpoint, you need to first run the <code class="highlighter-rouge">git log</code> command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">commit</span> <span class="n">f181e0eeb09b72b6419f07baa51f1b0e2c13d5bc</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Aashish</span> <span class="n">Kumar</span> <span class="o">&lt;</span><span class="n">aashish</span><span class="p">.</span><span class="n">kumar</span><span class="o">@</span><span class="n">devbae</span><span class="p">.</span><span class="n">tech</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">6</span> <span class="mi">04</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mi">09</span> <span class="mi">2020</span> <span class="o">+</span><span class="mi">0530</span>
+
+    <span class="n">Deleted</span> <span class="n">file3</span>
+
+<span class="n">commit</span> <span class="mi">151</span><span class="n">c1b257e1214290e51f189d99a2faf99901afa</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Aashish</span> <span class="n">Kumar</span> <span class="o">&lt;</span><span class="n">aashish</span><span class="p">.</span><span class="n">kumar</span><span class="o">@</span><span class="n">devbae</span><span class="p">.</span><span class="n">tech</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">6</span> <span class="mi">04</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">40</span> <span class="mi">2020</span> <span class="o">+</span><span class="mi">0530</span>
+
+    <span class="n">Changed</span> <span class="n">file2</span>
+
+<span class="n">commit</span> <span class="mi">2</span><span class="n">bca72097fd1f8aa7efb436202a336cabcd9fc1b</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Aashish</span> <span class="n">Kumar</span> <span class="o">&lt;</span><span class="n">aashish</span><span class="p">.</span><span class="n">kumar</span><span class="o">@</span><span class="n">devbae</span><span class="p">.</span><span class="n">tech</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">6</span> <span class="mi">04</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2020</span> <span class="o">+</span><span class="mi">0530</span>
+
+    <span class="n">Changed</span> <span class="n">file1</span>
+
+<span class="n">commit</span> <span class="mi">2282</span><span class="n">d7ff037132a3c390518c82d776d0b86f6a29</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Aashish</span> <span class="n">Kumar</span> <span class="o">&lt;</span><span class="n">aashish</span><span class="p">.</span><span class="n">kumar</span><span class="o">@</span><span class="n">devbae</span><span class="p">.</span><span class="n">tech</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">6</span> <span class="mi">04</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">05</span> <span class="mi">2020</span> <span class="o">+</span><span class="mi">0530</span>
+
+    <span class="n">My</span> <span class="n">first</span> <span class="n">commit</span>
+
+</code></pre></div></div>
+
+<p>This shows all my commits with their unique commit hashes and description. Now for e.g, you want to revisit the 2nd commit i.e you want your project to be in the state when the 2nd commit was made, just copy the commit hash of the 2nd commit and run the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">checkout</span> <span class="mi">2</span><span class="n">bca72097fd1f8aa7efb436202a336cabcd9fc1b</span>
+</code></pre></div></div>
+
+<p>Now if you check your files, you’ll see you’re in the same state as when you made the 2nd commit i.e in my case file3 will exist and file2 would not have any changes as I made those commits later. Now to get back to the present state, run the following command.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+</code></pre></div></div>
+
+<p>This will take the HEAD to its original state.</p>
+
+<p>For e.g, if you’ve recently committed and then again made some unnecessary changes, now you don’t want to commit these changes and want to go the state you were in when you made the last commit. You can simply reject these changes by running the following command, this is called stashing:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">stash</span>
+</code></pre></div></div>
+
+<p>This will reject all the changes you made after the last commit and make your working directory clean again.</p>
+
+<p>Now you know the basic working of git. It’s time to welcome Github and know it well.</p>
+
+<h2 id="git-github"> Git + Github = fire_emoji :p </h2>
+
+<p>Now to share your git repositories, you need a server that can host your repos, so that you can easily share them with others. <a href="https://github.com">Github</a> does exactly that, a server to save git repositories with a very cool and easy to understand web-based graphical interface, it also provides you various collaboration features for your projects like wikis, etc. Now we’ll be learning how to host your git repo on <a href="https://github.com">Github</a>.</p>
+
+<p>The first thing that you need to do is <a href="https://github.com/join">signup on github</a> and create an account. Now you need to update your account details on your locally installed git first. Run the following commands:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s">"&lt;You Github Username&gt;"</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s">"&lt;Your Github Email&gt;"</span>
+</code></pre></div></div>
+
+<h3 id="creating-a-repository-on-github">Creating a repository on Github</h3>
+
+<p>Login to your Github account, select <code class="highlighter-rouge">Create New Repository</code>, and select the following options:</p>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/81185203-ecf90880-8fce-11ea-97a7-20fe9b93dcf7.png" alt="image alt &gt;&lt;" /></p>
+
+<p>Hit the <code class="highlighter-rouge">Create Repository</code> button.</p>
+
+<h3 id="pushing-local-git-repo-to-github">Pushing local Git repo to Github</h3>
+
+<p>After creating the repo, run the commands as shown on the screen, use the link shown in your repo:</p>
+
+<p><img src="https://user-images.githubusercontent.com/21988675/81181775-912c8080-8fca-11ea-9396-de28b7268340.png" alt="image alt &gt;&lt;" /></p>
+
+<p>These are the commands:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">copied</span> <span class="n">link</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</code></pre></div></div>
+
+<p>Here <code class="highlighter-rouge">origin</code> is the name of the remote that we’re adding. The first command adds your remote repo to the local one, and the <code class="highlighter-rouge">push</code> command uploads your master branch to the remote repo.</p>
+
+<p>You can add multiple remote repos with the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">remoteName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">remoteLink</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Similarly, you can push multiple branches to remote servers by using the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">remoteName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">branchName</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>If you make changes manually on the remote repo on GitHub using its web interface, you need to update your local repository by <code class="highlighter-rouge">pulling</code> those changes, which can be done by the following command:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span> <span class="n">pull</span> <span class="o">&lt;</span><span class="n">remoteName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">branchName</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span> <span class="c1"># in our case
+</span></code></pre></div></div>
+
+<p>Now create your project, do multiple commits, push those commits on GitHub, and build a great GitHub profile &lt;3.</p>
+
+<p>Booyah! You’ve completed Part 2. How does it feel to be a git expert huh? Let us know in the comments below.</p>
+
+<p>Now for the Advanced git topics. Head to <strong><a href="/git-it-p3/">Part 3</a></strong>. You can also check <strong><a href="/git-it-p1/">Part 1</a></strong>, if you want to learn about basic theory of git.</p>
+
+<p><strong>Note:- If you think there is anything wrong with the tutorial, or you can modify something, feel free to point out in the comments or <a href="https://github.com/devbae/devbae-blog/issues">raise an issue</a>.</strong></p>
+
+
+        <hr>
+
+        <section class="page__share">
+  
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Git+it%21+-+Simplified+Git+Tutorial+%28Part+2%29.%20https%3A%2F%2Fwww.devbae.tech%2Fgit-it-p2%2F"
+    class="btn btn-twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Twitter"><i
+      class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.devbae.tech%2Fgit-it-p2%2F"
+    class="btn btn-facebook"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on Facebook"><i
+      class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.devbae.tech%2Fgit-it-p2%2F"
+    class="btn btn-linkedin"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=1000,height=1000,toolbar=1,resizable=0'); return false;"
+    title="Share on LinkedIn"><i
+      class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+        
+          <div id="disqus_thread"></div>
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+  this.page.url = page.url;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://devbae.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('SameSite', "none Secure");
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
+          <hr>
+        
+
+
+        <div class="clearfix">
+
+          
+            <a class="btn btn-primary float-left"
+              href="/git-it-p1/" data-toggle="tooltip"
+              data-placement="top" title="Git it! - Simplified Git Tutorial (Part 1).">&larr; Previous<span class="d-none d-md-inline">
+                Post</span></a>
+          
+          
+            <a class="btn btn-primary float-right"
+              href="/git-it-p3/" data-toggle="tooltip"
+              data-placement="top" title="Git it! - Simplified Git Tutorial (Part 3).">Next<span class="d-none d-md-inline">
+                Post</span> &rarr;</a>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:contact@devbae.tech">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/devbae">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; DevBae 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+<script id="dsq-count-scr" src="//devbae.disqus.com/count.js" SameSite="none Secure" async></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165164055-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165164055-1');
+</script>
+
+
+
+</body>
+
+</html>
